@@ -1,4 +1,4 @@
-# 1 "setting_hardaware/interrupt_manager.c"
+# 1 "setting_hardaware/pin_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "setting_hardaware/interrupt_manager.c" 2
+# 1 "setting_hardaware/pin_manager.c" 2
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4512,13 +4520,25 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "setting_hardaware/interrupt_manager.c" 2
+# 9 "setting_hardaware/pin_manager.c" 2
+
+# 1 "setting_hardaware/pin_manager.h" 1
 
 
 
-void INTERRUPT_Initialize (void)
-{
-    RCONbits.IPEN = 1;
-    INTCONbits.GIEH = 1;
-    INTCONbits.GIEL = 1;
+
+
+void PIN_MANAGER_Initialize(void);
+# 10 "setting_hardaware/pin_manager.c" 2
+
+
+void PIN_MANAGER_Initialize(){
+
+    TRISC=0X00;
+    TRISD=0X00;
+
+
+
+
+
 }

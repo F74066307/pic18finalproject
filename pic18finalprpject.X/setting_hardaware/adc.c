@@ -16,7 +16,7 @@
 double mq135_ro = RO;
 
 void ADC_Initialize(void) {
-    TRISA = 0x03;//RA0,RA1 input
+    
     //ADCON=0x01;//CH=0,go_done=0,on=1
     ADCON1 = 0x0D; //AN0,AN1->analog,other->digital	
     ADCON2=0x94;//right,ACQT=4TAD,ADCS=FOSC/4

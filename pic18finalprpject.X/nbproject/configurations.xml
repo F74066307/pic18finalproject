@@ -11,6 +11,7 @@
         <itemPath>setting_hardaware/interrupt_manager.h</itemPath>
         <itemPath>setting_hardaware/ccp1.h</itemPath>
         <itemPath>setting_hardaware/adc.h</itemPath>
+        <itemPath>setting_hardaware/LCD.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -26,6 +27,8 @@
         <itemPath>setting_hardaware/interrupt_manager.c</itemPath>
         <itemPath>setting_hardaware/ccp1.c</itemPath>
         <itemPath>setting_hardaware/adc.c</itemPath>
+        <itemPath>setting_hardaware/pin_manager.c</itemPath>
+        <itemPath>setting_hardaware/LCD.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

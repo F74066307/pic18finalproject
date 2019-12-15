@@ -57,41 +57,20 @@
 
 #include "setting.h"
 
-/*void TMR2_Initialize(){
-    TRISCbits.RC2 = 0;
-    T2CONbits.TMR2ON = 1;
-    T2CONbits.T2CKPS = 1;
-    OSCCONbits.IRCF = 4;
-    CCP1CONbits.CCP1M = 12;
-}
-*/
 void TMR1_Initialize(){
-    //PIE1bits.TMR1IE =1;
-    PIR1bits.TMR1IF =0;
-    IPR1bits.TMR1IP =1;
-    T1CONbits.RD16 = 1;
-    T1CONbits.TMR1ON = 1;
-    T1CONbits.T1CKPS = 3;
-    T1CONbits.TMR1CS = 0;
-    TMR1 = 34276;
+    
 }
 void TMR2_Initialize(){
-    TRISCbits.RC2 = 0;
-    T2CONbits.TMR2ON = 1;
-    T2CONbits.T2CKPS = 1;
-    CCP1CONbits.DC1B = 3;
-    //OSCCONbits.IRCF = 4;
-    CCP1CONbits.CCP1M = 12;
-    CCPR1L = 0;
-    CCP1CONbits.DC1B = 0;
+    
 }
 
 void SYSTEM_Initialize(void)
 {
-    OSCILLATOR_Initialize(); //default 2Mhz
+    PIN_MANAGER_Initialize();
+    OSCILLATOR_Initialize();
+    LCD_init();
     UART_Initialize();
     ADC_Initialize();
-    
 }
 
 void OSCILLATOR_Initialize(void)

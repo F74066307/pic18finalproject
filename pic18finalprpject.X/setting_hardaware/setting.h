@@ -10,9 +10,11 @@
 #include "adc.h"
 #include "interrupt_manager.h"
 #include "pin_manager.h"
+#include "LCD.h"
+
+#define _XTAL_FREQ 4000000
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
-
 
 #endif
