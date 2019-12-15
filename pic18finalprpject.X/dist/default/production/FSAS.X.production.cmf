@@ -1,0 +1,860 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production/FSAS.X.production.o
+intcodelo CODE 0 18 18 52 1
+cinit CODE 0 1080 1080 2A 1
+intcode_body CODE 0 110C 110C 16 1
+text0 CODE 0 C38 C38 E2 1
+text1 CODE 0 EC0 EC0 52 1
+text2 CODE 0 F12 F12 52 1
+text3 CODE 0 84C 84C 180 1
+text4 CODE 0 60A 60A 242 1
+text5 CODE 0 DBA DBA 96 1
+text6 CODE 0 10AA 10AA 2A 1
+text7 CODE 0 FE2 FE2 38 1
+text8 CODE 0 D1A D1A A0 1
+text9 CODE 0 1150 1150 2 1
+text10 CODE 0 104E 104E 32 1
+text11 CODE 0 B14 B14 124 1
+text12 CODE 0 9CC 9CC 148 1
+text13 CODE 0 101A 101A 34 1
+text14 CODE 0 1130 1130 C 1
+text15 CODE 0 1122 1122 E 1
+text16 CODE 0 10D4 10D4 22 1
+text17 CODE 0 1148 1148 8 1
+text18 CODE 0 10F6 10F6 16 1
+text19 CODE 0 FA8 FA8 3A 1
+text21 CODE 0 F64 F64 44 1
+text22 CODE 0 113C 113C C 1
+text23 CODE 0 E50 E50 70 1
+cstackCOMRAM COMRAM 1 1 1 62 1
+cstackBANK0 BANK0 1 AA AA 22 1
+temp COMRAM 1 6F 6F 1 1
+bssBANK0 BANK0 1 80 80 2A 1
+intcode CODE 0 8 8 6 1
+smallconst SMALLCONST 0 600 600 A 1
+bssCOMRAM COMRAM 1 63 63 C 1
+$/tmp/xcXyxGz4v.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 6A 6A 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM CC-5FF 1
+SFR F80-FFF 1
+BANK0 CC-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+CONST 4-7 1
+CONST E-17 1
+CONST 6E-5FF 1
+CONST 1152-7FFF 1
+STACK CC-5FF 1
+SMALLCONST 1152-7FFF 1
+CODE 4-7 1
+CODE E-17 1
+CODE 6E-5FF 1
+CODE 1152-7FFF 1
+BIGRAM 70-7F 1
+BIGRAM CC-5FF 1
+COMRAM 70-7F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 1152-7FFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/FSAS.X.production.o
+18 intcodelo CODE >25:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+18 intcodelo CODE >82:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+2E intcodelo CODE >84:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+32 intcodelo CODE >86:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+36 intcodelo CODE >88:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+38 intcodelo CODE >89:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+3A intcodelo CODE >90:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+3C intcodelo CODE >93:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+40 intcodelo CODE >95:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+44 intcodelo CODE >96:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+48 intcodelo CODE >97:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+50 intcodelo CODE >98:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+52 intcodelo CODE >104:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+8 intcode CODE >34:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+8 intcode CODE >25:/home/cicero/MPLABXProjects/FSAS.X/main.c
+110C intcode_body CODE >25:/home/cicero/MPLABXProjects/FSAS.X/main.c
+110E intcode_body CODE >27:/home/cicero/MPLABXProjects/FSAS.X/main.c
+1112 intcode_body CODE >28:/home/cicero/MPLABXProjects/FSAS.X/main.c
+1114 intcode_body CODE >29:/home/cicero/MPLABXProjects/FSAS.X/main.c
+1116 intcode_body CODE >30:/home/cicero/MPLABXProjects/FSAS.X/main.c
+111E intcode_body CODE >40:/home/cicero/MPLABXProjects/FSAS.X/main.c
+E50 text23 CODE >7:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E50 text23 CODE >12:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E54 text23 CODE >13:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E58 text23 CODE >14:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E60 text23 CODE >15:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E64 text23 CODE >17:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E68 text23 CODE >18:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E70 text23 CODE >19:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E78 text23 CODE >20:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E7C text23 CODE >21:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E7E text23 CODE >22:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E84 text23 CODE >23:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E86 text23 CODE >21:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E8A text23 CODE >26:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E96 text23 CODE >27:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+E9E text23 CODE >28:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+EA4 text23 CODE >29:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+EA8 text23 CODE >31:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+EAE text23 CODE >32:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+EB6 text23 CODE >33:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+EBE text23 CODE >34:/opt/microchip/xc8/v2.05/pic/sources/c99/common/awmod.c
+113C text22 CODE >40:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+113E text22 CODE >42:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+1142 text22 CODE >43:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+1146 text22 CODE >44:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+F64 text21 CODE >61:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+F64 text21 CODE >63:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+F74 text21 CODE >64:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+F86 text21 CODE >65:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+F8A text21 CODE >66:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+FA6 text21 CODE >70:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+FA8 text19 CODE >13:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+FA8 text19 CODE >17:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+FBA text19 CODE >18:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+FBC text19 CODE >19:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+FBE text19 CODE >21:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+FC2 text19 CODE >23:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+FD8 text19 CODE >24:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+FE0 text19 CODE >25:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+10F6 text18 CODE >3:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+10F6 text18 CODE >4:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+10F8 text18 CODE >5:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+10FC text18 CODE >7:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+10FE text18 CODE >8:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+1102 text18 CODE >9:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+1106 text18 CODE >10:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+110A text18 CODE >11:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/adc.c
+1148 text17 CODE >101:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+1148 text17 CODE >103:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+114A text17 CODE >104:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+114C text17 CODE >105:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+114E text17 CODE >107:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+10D4 text16 CODE >7:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10D4 text16 CODE >10:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10D6 text16 CODE >11:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10D8 text16 CODE >22:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10DA text16 CODE >23:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10DC text16 CODE >24:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10DE text16 CODE >25:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10E2 text16 CODE >28:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10E4 text16 CODE >29:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10E6 text16 CODE >30:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10E8 text16 CODE >31:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10EA text16 CODE >32:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10EC text16 CODE >34:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10EE text16 CODE >35:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10F0 text16 CODE >36:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10F2 text16 CODE >37:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+10F4 text16 CODE >38:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+1122 text15 CODE >89:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+1122 text15 CODE >92:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+1126 text15 CODE >95:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+112A text15 CODE >97:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+112E text15 CODE >99:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/setting.c
+1130 text14 CODE >40:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+1132 text14 CODE >42:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+1136 text14 CODE >43:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+113A text14 CODE >44:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+101A text13 CODE >50:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+101A text13 CODE >51:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+1024 text13 CODE >52:/home/cicero/MPLABXProjects/FSAS.X/setting_hardaware/uart.c
+9CC text12 CODE >9:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+9CC text12 CODE >15:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+9D0 text12 CODE >16:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+9D4 text12 CODE >17:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+9F4 text12 CODE >18:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+9F8 text12 CODE >20:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+9FC text12 CODE >21:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A1C text12 CODE >22:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A20 text12 CODE >24:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A2C text12 CODE >25:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A40 text12 CODE >26:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A44 text12 CODE >27:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A46 text12 CODE >28:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A58 text12 CODE >29:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A5A text12 CODE >27:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A5E text12 CODE >32:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A70 text12 CODE >33:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+A94 text12 CODE >34:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+AB4 text12 CODE >35:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+AB6 text12 CODE >37:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+AC8 text12 CODE >38:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+ACC text12 CODE >40:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+AD2 text12 CODE >41:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+AF2 text12 CODE >42:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+B12 text12 CODE >43:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aodiv.c
+B14 text11 CODE >9:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B14 text11 CODE >14:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B18 text11 CODE >15:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B1C text11 CODE >16:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B3C text11 CODE >17:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B40 text11 CODE >19:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B44 text11 CODE >20:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B64 text11 CODE >21:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B78 text11 CODE >22:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B7C text11 CODE >23:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B7E text11 CODE >24:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B90 text11 CODE >25:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B92 text11 CODE >23:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+B96 text11 CODE >28:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+BBA text11 CODE >29:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+BDA text11 CODE >30:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+BEC text11 CODE >31:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+BF0 text11 CODE >33:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+BF6 text11 CODE >34:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+C16 text11 CODE >35:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+C36 text11 CODE >36:/opt/microchip/xc8/v2.05/pic/sources/c99/common/aomod.c
+104E text10 CODE >1:/opt/microchip/xc8/v2.05/pic/sources/c99/common/abs.c
+104E text10 CODE >3:/opt/microchip/xc8/v2.05/pic/sources/c99/common/abs.c
+107E text10 CODE >4:/opt/microchip/xc8/v2.05/pic/sources/c99/common/abs.c
+1150 text9 CODE >7:/opt/microchip/xc8/v2.05/pic/sources/c99/common/putch.c
+1150 text9 CODE >9:/opt/microchip/xc8/v2.05/pic/sources/c99/common/putch.c
+D1A text8 CODE >8:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+D1A text8 CODE >12:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+D2A text8 CODE >13:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+D30 text8 CODE >14:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+D32 text8 CODE >15:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+D72 text8 CODE >16:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+DA6 text8 CODE >17:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+DB8 text8 CODE >21:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputc.c
+FE2 text7 CODE >8:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+FE2 text7 CODE >13:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+FEA text7 CODE >14:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+FEC text7 CODE >15:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+FFE text7 CODE >16:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+1002 text7 CODE >14:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_fputs.c
+10AA text6 CODE >12:/opt/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+10AA text6 CODE >14:/opt/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+10B2 text6 CODE >16:/opt/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+10B4 text6 CODE >17:/opt/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+10B8 text6 CODE >16:/opt/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+10C6 text6 CODE >25:/opt/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+10D2 text6 CODE >26:/opt/microchip/xc8/v2.05/pic/sources/c99/common/strlen.c
+DBA text5 CODE >72:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+DBA text5 CODE >77:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+DBE text5 CODE >78:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+DD2 text5 CODE >82:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+DE8 text5 CODE >83:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+DF0 text5 CODE >84:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+DF2 text5 CODE >85:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+E06 text5 CODE >86:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+E0A text5 CODE >84:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+E1E text5 CODE >90:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+E22 text5 CODE >91:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+E36 text5 CODE >94:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+E4E text5 CODE >95:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+60A text4 CODE >274:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+60A text4 CODE >280:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+62A text4 CODE >281:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+638 text4 CODE >282:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+640 text4 CODE >283:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+660 text4 CODE >287:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+662 text4 CODE >288:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+664 text4 CODE >290:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+684 text4 CODE >291:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+68C text4 CODE >292:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+698 text4 CODE >293:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+69E text4 CODE >297:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+6A6 text4 CODE >298:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+6AC text4 CODE >299:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+6AE text4 CODE >300:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+6B4 text4 CODE >301:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+736 text4 CODE >302:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+73C text4 CODE >303:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+742 text4 CODE >304:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+7A6 text4 CODE >299:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+7E8 text4 CODE >308:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+7F4 text4 CODE >309:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+7FA text4 CODE >310:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+822 text4 CODE >314:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+84A text4 CODE >315:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+84C text3 CODE >670:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+84C text3 CODE >680:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+866 text3 CODE >681:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+874 text3 CODE >683:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+884 text3 CODE >684:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+888 text3 CODE >825:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+8BC text3 CODE >827:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+8CA text3 CODE >828:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+904 text3 CODE >830:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+93A text3 CODE >1350:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+954 text3 CODE >1351:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+962 text3 CODE >1352:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+976 text3 CODE >1353:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+980 text3 CODE >1357:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+98E text3 CODE >1358:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+998 text3 CODE >1362:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+9BC text3 CODE >1363:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F12 text2 CODE >1368:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F12 text2 CODE >1373:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F1A text2 CODE >1374:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F22 text2 CODE >1375:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F24 text2 CODE >1376:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F48 text2 CODE >1375:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F5A text2 CODE >1378:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+F62 text2 CODE >1382:/opt/microchip/xc8/v2.05/pic/sources/c99/common/doprnt.c
+EC0 text1 CODE >9:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+EC0 text1 CODE >15:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+ECA text1 CODE >16:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+ED2 text1 CODE >17:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+EDA text1 CODE >18:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+EE2 text1 CODE >19:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+EFE text1 CODE >20:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+F10 text1 CODE >23:/opt/microchip/xc8/v2.05/pic/sources/c99/common/nf_sprintf.c
+C38 text0 CODE >7:/home/cicero/MPLABXProjects/FSAS.X/main.c
+C38 text0 CODE >9:/home/cicero/MPLABXProjects/FSAS.X/main.c
+C3C text0 CODE >11:/home/cicero/MPLABXProjects/FSAS.X/main.c
+C76 text0 CODE >13:/home/cicero/MPLABXProjects/FSAS.X/main.c
+C9E text0 CODE >14:/home/cicero/MPLABXProjects/FSAS.X/main.c
+CAA text0 CODE >15:/home/cicero/MPLABXProjects/FSAS.X/main.c
+CE4 text0 CODE >16:/home/cicero/MPLABXProjects/FSAS.X/main.c
+D0C text0 CODE >17:/home/cicero/MPLABXProjects/FSAS.X/main.c
+1080 cinit CODE >1952:/tmp/xcXOlvxUo
+1080 cinit CODE >1954:/tmp/xcXOlvxUo
+1080 cinit CODE >1957:/tmp/xcXOlvxUo
+1080 cinit CODE >1988:/tmp/xcXOlvxUo
+1084 cinit CODE >1989:/tmp/xcXOlvxUo
+1086 cinit CODE >1990:/tmp/xcXOlvxUo
+1086 cinit CODE >1991:/tmp/xcXOlvxUo
+1088 cinit CODE >1992:/tmp/xcXOlvxUo
+108A cinit CODE >1993:/tmp/xcXOlvxUo
+108C cinit CODE >1996:/tmp/xcXOlvxUo
+1090 cinit CODE >1997:/tmp/xcXOlvxUo
+1092 cinit CODE >1998:/tmp/xcXOlvxUo
+1092 cinit CODE >1999:/tmp/xcXOlvxUo
+1094 cinit CODE >2000:/tmp/xcXOlvxUo
+1096 cinit CODE >2001:/tmp/xcXOlvxUo
+1098 cinit CODE >2007:/tmp/xcXOlvxUo
+1098 cinit CODE >2009:/tmp/xcXOlvxUo
+109A cinit CODE >2010:/tmp/xcXOlvxUo
+109C cinit CODE >2012:/tmp/xcXOlvxUo
+109E cinit CODE >2013:/tmp/xcXOlvxUo
+10A0 cinit CODE >2014:/tmp/xcXOlvxUo
+10A2 cinit CODE >2015:/tmp/xcXOlvxUo
+10A4 cinit CODE >2016:/tmp/xcXOlvxUo
+10A6 cinit CODE >2017:/tmp/xcXOlvxUo
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/FSAS.X.production.o
+__Hspace_0 30000E 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hspace_1 CC 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__end_of_Hi_ISR 1122 0 CODE 0 intcode_body dist/default/production/FSAS.X.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production/FSAS.X.production.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXyxGz4v.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/FSAS.X.production.o
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_T1CONbits FCD 0 ABS 0 - dist/default/production/FSAS.X.production.o
+?_abs 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+?_pad 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__end_of_Lo_ISR 6A 0 CODE 0 intcodelo dist/default/production/FSAS.X.production.o
+main@i C6 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+main@j C4 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+main@r BA 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+?_vfprintf 5B 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/production/FSAS.X.production.o
+_ADFM 7E07 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_CREN 7D5C 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_RCIF 7CF5 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_TMR1 FCE 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_TMR3 FB2 0 ABS 0 - dist/default/production/FSAS.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXyxGz4v.o
+_dbuf 80 0 BANK0 1 bssBANK0 dist/default/production/FSAS.X.production.o
+_dtoa 60A 0 CODE 0 text4 dist/default/production/FSAS.X.production.o
+_main C38 0 CODE 0 text0 dist/default/production/FSAS.X.production.o
+_nout 63 0 COMRAM 1 bssCOMRAM dist/default/production/FSAS.X.production.o
+_prec 67 0 COMRAM 1 bssCOMRAM dist/default/production/FSAS.X.production.o
+abs@a 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+btemp 6F 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+pad@i 23 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+pad@p 20 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+pad@w 25 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+start 6A 0 CODE 0 init /tmp/xcXyxGz4v.o
+___aomod@counter 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__size_of___aodiv 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of___aomod 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of___awmod 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_dtoa 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/FSAS.X.production.o
+pad@fp 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Hpowerup 6A 0 CODE 0 powerup dist/default/production/FSAS.X.production.o
+__end_of_vfpfcnvrt 9CC 0 CODE 0 text3 dist/default/production/FSAS.X.production.o
+___awmod@sign 6 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+ttemp5 70 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+ttemp6 73 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+ttemp7 77 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+__size_of_ADC_Read 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__accesstop 80 0 ABS 0 - /tmp/xcXyxGz4v.o
+intlevel0 0 0 CODE 0 text /tmp/xcXyxGz4v.o
+intlevel1 0 0 CODE 0 text /tmp/xcXyxGz4v.o
+intlevel2 0 0 CODE 0 text /tmp/xcXyxGz4v.o
+intlevel3 0 0 CODE 0 text /tmp/xcXyxGz4v.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/FSAS.X.production.o
+__size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_MyusartRead F64 0 CODE 0 text21 dist/default/production/FSAS.X.production.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/FSAS.X.production.o
+wtemp8 70 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_UART_Write 1130 0 CODE 0 text14 dist/default/production/FSAS.X.production.o
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production/FSAS.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production/FSAS.X.production.o
+_vfpfcnvrt 84C 0 CODE 0 text3 dist/default/production/FSAS.X.production.o
+dtoa@fp 27 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+_ADCON1 FC1 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_ADRESH FC4 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_ADRESL FC3 0 ABS 0 - dist/default/production/FSAS.X.production.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXyxGz4v.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXyxGz4v.o
+_CCPR1L FBE 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/FSAS.X.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/FSAS.X.production.o
+_mystring A0 0 BANK0 1 bssBANK0 dist/default/production/FSAS.X.production.o
+i1UART_Write@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__size_of_sprintf 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_BAUDCONbits FB8 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/FSAS.X.production.o
+_ADC_Read FA8 0 CODE 0 text19 dist/default/production/FSAS.X.production.o
+__Hintcodelo 6A 0 CODE 0 intcodelo dist/default/production/FSAS.X.production.o
+__end_of___aodiv B14 0 CODE 0 text12 dist/default/production/FSAS.X.production.o
+__end_of___aomod C38 0 CODE 0 text11 dist/default/production/FSAS.X.production.o
+__end_of___awmod EC0 0 CODE 0 text23 dist/default/production/FSAS.X.production.o
+___aodiv@quotient 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+_Hi_ISR 8 0 CODE 0 intcode dist/default/production/FSAS.X.production.o
+?_strlen C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__end_of_ADC_Read FE2 0 CODE 0 text19 dist/default/production/FSAS.X.production.o
+___aomod@dividend C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__end_of_UART_Write 113C 0 CODE 0 text14 dist/default/production/FSAS.X.production.o
+__size_of_fputc 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_fputs 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_putch 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_Lo_ISR 18 0 CODE 0 intcodelo dist/default/production/FSAS.X.production.o
+__Lintcodelo 18 0 CODE 0 intcodelo dist/default/production/FSAS.X.production.o
+ADC_Read@channel C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+___aomod@divisor 14 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+start_initialization 1080 0 CODE 0 cinit dist/default/production/FSAS.X.production.o
+__CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/FSAS.X.production.o
+_TRISCbits F94 0 ABS 0 - dist/default/production/FSAS.X.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__end_of_SYSTEM_Initialize 1130 0 CODE 0 text15 dist/default/production/FSAS.X.production.o
+__pcstackBANK0 AA 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+_IPR1bits F9F 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__end_of_UART_Initialize 10F6 0 CODE 0 text16 dist/default/production/FSAS.X.production.o
+__end_of_UART_Write_Text 104E 0 CODE 0 text13 dist/default/production/FSAS.X.production.o
+__size_of_Hi_ISR 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+fputc@fp E 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+fputs@fp 17 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production/FSAS.X.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production/FSAS.X.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production/FSAS.X.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production/FSAS.X.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production/FSAS.X.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production/FSAS.X.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production/FSAS.X.production.o
+__Hconst 0 0 CONST 0 const dist/default/production/FSAS.X.production.o
+__end_of_strlen 10D4 0 CODE 0 text6 dist/default/production/FSAS.X.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production/FSAS.X.production.o
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production/FSAS.X.production.o
+__size_of_Lo_ISR 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production/FSAS.X.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production/FSAS.X.production.o
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production/FSAS.X.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production/FSAS.X.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production/FSAS.X.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production/FSAS.X.production.o
+__Htext2 0 0 ABS 0 text2 dist/default/production/FSAS.X.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production/FSAS.X.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production/FSAS.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production/FSAS.X.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production/FSAS.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production/FSAS.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production/FSAS.X.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production/FSAS.X.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/FSAS.X.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production/FSAS.X.production.o
+__smallconst 600 0 SMALLCONST 0 smallconst /tmp/xcXyxGz4v.o
+__end_of_sprintf F12 0 CODE 0 text1 dist/default/production/FSAS.X.production.o
+__Hcomram 0 0 ABS 0 comram dist/default/production/FSAS.X.production.o
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production/FSAS.X.production.o
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production/FSAS.X.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production/FSAS.X.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production/FSAS.X.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production/FSAS.X.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production/FSAS.X.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production/FSAS.X.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production/FSAS.X.production.o
+__Lconst 0 0 CONST 0 const dist/default/production/FSAS.X.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production/FSAS.X.production.o
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production/FSAS.X.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production/FSAS.X.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production/FSAS.X.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production/FSAS.X.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production/FSAS.X.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production/FSAS.X.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production/FSAS.X.production.o
+__Ltext2 0 0 ABS 0 text2 dist/default/production/FSAS.X.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production/FSAS.X.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production/FSAS.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production/FSAS.X.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production/FSAS.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production/FSAS.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production/FSAS.X.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production/FSAS.X.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production/FSAS.X.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production/FSAS.X.production.o
+_INTCONbits FF2 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_OSC$INTIO67 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production/FSAS.X.production.o
+__Hdata 0 0 ABS 0 data dist/default/production/FSAS.X.production.o
+__Hinit 6E 0 CODE 0 init dist/default/production/FSAS.X.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production/FSAS.X.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production/FSAS.X.production.o
+__Htemp 70 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+__Htext 0 0 ABS 0 text dist/default/production/FSAS.X.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production/FSAS.X.production.o
+__Ldata 0 0 ABS 0 data dist/default/production/FSAS.X.production.o
+__Linit 6A 0 CODE 0 init dist/default/production/FSAS.X.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production/FSAS.X.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production/FSAS.X.production.o
+__Ltemp 6F 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+__Ltext 0 0 ABS 0 text dist/default/production/FSAS.X.production.o
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+___aodiv@counter 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+___aomod@sign 1D 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/FSAS.X.production.o
+_UART_Initialize 10D4 0 CODE 0 text16 dist/default/production/FSAS.X.production.o
+int$flags 6F 0 COMRAM 1 temp dist/default/production/FSAS.X.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/FSAS.X.production.o
+_UART_Write_Text 101A 0 CODE 0 text13 dist/default/production/FSAS.X.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production/FSAS.X.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production/FSAS.X.production.o
+_RC2 7C12 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__S0 30000E 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__S1 CC 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__S2 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_abs 104E 0 CODE 0 text10 dist/default/production/FSAS.X.production.o
+_pad DBA 0 CODE 0 text5 dist/default/production/FSAS.X.production.o
+?_ADC_Read C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+___aodiv@sign 1D 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/FSAS.X.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/FSAS.X.production.o
+sprintf@fmt AC 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+_SYSTEM_Initialize 1122 0 CODE 0 text15 dist/default/production/FSAS.X.production.o
+_dtoa$1023 39 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__end_of_MyusartRead FA8 0 CODE 0 text21 dist/default/production/FSAS.X.production.o
+__end_of_abs 1080 0 CODE 0 text10 dist/default/production/FSAS.X.production.o
+__end_of_pad E50 0 CODE 0 text5 dist/default/production/FSAS.X.production.o
+int_func 110C 0 CODE 0 intcode_body dist/default/production/FSAS.X.production.o
+__CFG_CCP2MX$PORTC 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production/FSAS.X.production.o
+UART_Write_Text@i F 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Hramtop 600 0 RAM 0 ramtop dist/default/production/FSAS.X.production.o
+strlen@a E 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+strlen@s C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production/FSAS.X.production.o
+__activetblptr 1 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production/FSAS.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production/FSAS.X.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production/FSAS.X.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production/FSAS.X.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production/FSAS.X.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production/FSAS.X.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production/FSAS.X.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production/FSAS.X.production.o
+__Htext16 0 0 ABS 0 text16 dist/default/production/FSAS.X.production.o
+__Htext17 0 0 ABS 0 text17 dist/default/production/FSAS.X.production.o
+__Htext18 0 0 ABS 0 text18 dist/default/production/FSAS.X.production.o
+__Htext19 0 0 ABS 0 text19 dist/default/production/FSAS.X.production.o
+__Htext21 0 0 ABS 0 text21 dist/default/production/FSAS.X.production.o
+__Htext22 0 0 ABS 0 text22 dist/default/production/FSAS.X.production.o
+__Htext23 0 0 ABS 0 text23 dist/default/production/FSAS.X.production.o
+i1_UART_Write 113C 0 CODE 0 text22 dist/default/production/FSAS.X.production.o
+vfpfcnvrt@fmt 4D 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+_ADC_Initialize 10F6 0 CODE 0 text18 dist/default/production/FSAS.X.production.o
+_lenStr 6D 0 COMRAM 1 bssCOMRAM dist/default/production/FSAS.X.production.o
+___awmod@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+_RCSTAbits FAB 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_PIE1bits F9D 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_UART_Write 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+pad@buf 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__ptext10 104E 0 CODE 0 text10 dist/default/production/FSAS.X.production.o
+__ptext11 B14 0 CODE 0 text11 dist/default/production/FSAS.X.production.o
+__ptext12 9CC 0 CODE 0 text12 dist/default/production/FSAS.X.production.o
+__ptext13 101A 0 CODE 0 text13 dist/default/production/FSAS.X.production.o
+__ptext14 1130 0 CODE 0 text14 dist/default/production/FSAS.X.production.o
+__ptext15 1122 0 CODE 0 text15 dist/default/production/FSAS.X.production.o
+__ptext16 10D4 0 CODE 0 text16 dist/default/production/FSAS.X.production.o
+__ptext17 1148 0 CODE 0 text17 dist/default/production/FSAS.X.production.o
+__ptext18 10F6 0 CODE 0 text18 dist/default/production/FSAS.X.production.o
+__ptext19 FA8 0 CODE 0 text19 dist/default/production/FSAS.X.production.o
+__ptext21 F64 0 CODE 0 text21 dist/default/production/FSAS.X.production.o
+__ptext22 113C 0 CODE 0 text22 dist/default/production/FSAS.X.production.o
+__ptext23 E50 0 CODE 0 text23 dist/default/production/FSAS.X.production.o
+___aodiv 9CC 0 CODE 0 text12 dist/default/production/FSAS.X.production.o
+___aomod B14 0 CODE 0 text11 dist/default/production/FSAS.X.production.o
+___awmod E50 0 CODE 0 text23 dist/default/production/FSAS.X.production.o
+__pintcode_body 110C 0 CODE 0 intcode_body dist/default/production/FSAS.X.production.o
+ADC_Read@digital 10 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production/FSAS.X.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production/FSAS.X.production.o
+__CFG_BORV$3 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+UART_Write_Text@text D 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+?_dtoa 27 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production/FSAS.X.production.o
+__Lconfig 300000 0 CONFIG 0 config dist/default/production/FSAS.X.production.o
+__CFG_IESO$ON 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production/FSAS.X.production.o
+main@i_969 CA 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+main@j_968 C8 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+_strlen 10AA 0 CODE 0 text6 dist/default/production/FSAS.X.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production/FSAS.X.production.o
+__size_of_UART_Initialize 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_UART_Write_Text 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_vfprintf 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+stackhi 5FF 0 ABS 0 - /tmp/xcXyxGz4v.o
+stacklo CC 0 ABS 0 - /tmp/xcXyxGz4v.o
+__size_ofi1_UART_Write 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lintcode 8 0 CODE 0 intcode dist/default/production/FSAS.X.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production/FSAS.X.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production/FSAS.X.production.o
+_ADCON0bits FC2 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_ADCON2bits FC0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+?_vfpfcnvrt 4B 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__pbssCOMRAM 63 0 COMRAM 1 bssCOMRAM dist/default/production/FSAS.X.production.o
+__end_of_ADC_Initialize 110C 0 CODE 0 text18 dist/default/production/FSAS.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/FSAS.X.production.o
+_PIR1bits F9E 0 ABS 0 - dist/default/production/FSAS.X.production.o
+___aodiv@divisor 14 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+___aodiv@dividend C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/FSAS.X.production.o
+end_of_initialization 1098 0 CODE 0 cinit dist/default/production/FSAS.X.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/FSAS.X.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production/FSAS.X.production.o
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_RCONbits FD0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+fputc@c C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+fputs@c 19 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+fputs@i 1A 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+fputs@s 15 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__end_ofi1_UART_Write 1148 0 CODE 0 text22 dist/default/production/FSAS.X.production.o
+?___aodiv C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+?___aomod C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+?___awmod 1 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+vfprintf@fmt 5D 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production/FSAS.X.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production/FSAS.X.production.o
+___awmod@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Lramtop 600 0 RAM 0 ramtop dist/default/production/FSAS.X.production.o
+__size_of_strlen 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production/FSAS.X.production.o
+__pcinit 1080 0 CODE 0 cinit dist/default/production/FSAS.X.production.o
+vfpfcnvrt@ap 4F 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+vfpfcnvrt@fp 4B 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+vfpfcnvrt@ll 53 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__ptext0 C38 0 CODE 0 text0 dist/default/production/FSAS.X.production.o
+__ptext1 EC0 0 CODE 0 text1 dist/default/production/FSAS.X.production.o
+__ptext2 F12 0 CODE 0 text2 dist/default/production/FSAS.X.production.o
+__ptext3 84C 0 CODE 0 text3 dist/default/production/FSAS.X.production.o
+__ptext4 60A 0 CODE 0 text4 dist/default/production/FSAS.X.production.o
+__ptext5 DBA 0 CODE 0 text5 dist/default/production/FSAS.X.production.o
+__ptext6 10AA 0 CODE 0 text6 dist/default/production/FSAS.X.production.o
+__ptext7 FE2 0 CODE 0 text7 dist/default/production/FSAS.X.production.o
+__ptext8 D1A 0 CODE 0 text8 dist/default/production/FSAS.X.production.o
+__ptext9 1150 0 CODE 0 text9 dist/default/production/FSAS.X.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production/FSAS.X.production.o
+vfprintf@ap 5F 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+vfprintf@fp 5B 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+vfprintf@cfmt 61 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production/FSAS.X.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production/FSAS.X.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production/FSAS.X.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production/FSAS.X.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production/FSAS.X.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production/FSAS.X.production.o
+__Ltext16 0 0 ABS 0 text16 dist/default/production/FSAS.X.production.o
+__Ltext17 0 0 ABS 0 text17 dist/default/production/FSAS.X.production.o
+__Ltext18 0 0 ABS 0 text18 dist/default/production/FSAS.X.production.o
+__Ltext19 0 0 ABS 0 text19 dist/default/production/FSAS.X.production.o
+__Ltext21 0 0 ABS 0 text21 dist/default/production/FSAS.X.production.o
+__Ltext22 0 0 ABS 0 text22 dist/default/production/FSAS.X.production.o
+__Ltext23 0 0 ABS 0 text23 dist/default/production/FSAS.X.production.o
+__ramtop 600 0 RAM 0 ramtop /tmp/xcXyxGz4v.o
+_sprintf EC0 0 CODE 0 text1 dist/default/production/FSAS.X.production.o
+_vfprintf F12 0 CODE 0 text2 dist/default/production/FSAS.X.production.o
+__Lpowerup 6A 0 CODE 0 powerup dist/default/production/FSAS.X.production.o
+UART_Write@data C 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/FSAS.X.production.o
+sprintf@ap B2 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+__psmallconst 600 0 SMALLCONST 0 smallconst dist/default/production/FSAS.X.production.o
+__size_of_MyusartRead 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production/FSAS.X.production.o
+__end_of_vfprintf F64 0 CODE 0 text2 dist/default/production/FSAS.X.production.o
+___param_bank 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_WDTPS$1 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production/FSAS.X.production.o
+__end_of__initialization 1098 0 CODE 0 cinit dist/default/production/FSAS.X.production.o
+___awmod@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production/FSAS.X.production.o
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production/FSAS.X.production.o
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__pintcodelo 18 0 CODE 0 intcodelo dist/default/production/FSAS.X.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+_TXSTAbits FAC 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+sprintf@f B4 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+sprintf@s AA 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+__end_of_dtoa 84C 0 CODE 0 text4 dist/default/production/FSAS.X.production.o
+__end_of_main D1A 0 CODE 0 text0 dist/default/production/FSAS.X.production.o
+__pintcode 8 0 CODE 0 intcode dist/default/production/FSAS.X.production.o
+_IRCF0 7E9C 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_IRCF1 7E9D 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_IRCF2 7E9E 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__end_of_fputc DBA 0 CODE 0 text8 dist/default/production/FSAS.X.production.o
+__end_of_fputs 101A 0 CODE 0 text7 dist/default/production/FSAS.X.production.o
+?_sprintf AA 0 BANK0 1 cstackBANK0 dist/default/production/FSAS.X.production.o
+_RCREG FAE 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_SPBRG FAF 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_TRISA F92 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_TXREG FAD 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__end_of_putch 1152 0 CODE 0 text9 dist/default/production/FSAS.X.production.o
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__HRAM 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production/FSAS.X.production.o
+__Hram 0 0 ABS 0 ram dist/default/production/FSAS.X.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production/FSAS.X.production.o
+__LRAM 1 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production/FSAS.X.production.o
+__Lram 0 0 ABS 0 ram dist/default/production/FSAS.X.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production/FSAS.X.production.o
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_count 6B 0 COMRAM 1 bssCOMRAM dist/default/production/FSAS.X.production.o
+_flags 69 0 COMRAM 1 bssCOMRAM dist/default/production/FSAS.X.production.o
+_fputc D1A 0 CODE 0 text8 dist/default/production/FSAS.X.production.o
+_fputs FE2 0 CODE 0 text7 dist/default/production/FSAS.X.production.o
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_putch 1150 0 CODE 0 text9 dist/default/production/FSAS.X.production.o
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+_width 65 0 COMRAM 1 bssCOMRAM dist/default/production/FSAS.X.production.o
+__size_of_abs 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__size_of_pad 0 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__end_of_OSCILLATOR_Initialize 1150 0 CODE 0 text17 dist/default/production/FSAS.X.production.o
+__initialization 1080 0 CODE 0 cinit dist/default/production/FSAS.X.production.o
+__pbssBANK0 80 0 BANK0 1 bssBANK0 dist/default/production/FSAS.X.production.o
+_T2CONbits FCA 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production/FSAS.X.production.o
+__Hsmallconst 60A 0 SMALLCONST 0 smallconst dist/default/production/FSAS.X.production.o
+dtoa@d 29 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+dtoa@i 49 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+dtoa@n 41 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+dtoa@p 3B 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+dtoa@s 3F 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+dtoa@w 3D 0 COMRAM 1 cstackCOMRAM dist/default/production/FSAS.X.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production/FSAS.X.production.o
+_CCP1CONbits FBD 0 ABS 0 - dist/default/production/FSAS.X.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/FSAS.X.production.o
+__Hintcode E 0 CODE 0 intcode dist/default/production/FSAS.X.production.o
+_OSCILLATOR_Initialize 1148 0 CODE 0 text17 dist/default/production/FSAS.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+intcodelo 0 18 18 56 1
+idloc 0 200000 200000 8 1
+text4 0 60A 60A B48 1
+cstackCOMRAM 1 1 1 6F 1
+reset_vec 0 0 0 4 1
+bssBANK0 1 80 80 4C 1
+intcode 0 8 8 6 1
+smallconst 0 600 600 A 1
+config 0 300000 300000 E 1
