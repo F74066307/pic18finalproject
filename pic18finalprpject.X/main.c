@@ -12,6 +12,7 @@ void main(void)
         sprintf(r,"%.2f",ADC_Read(0));
         //UART_Write_Text(r);
         __delay_us(200);
+        memset(r,'\0',sizeof(r));
         sprintf(r,"%.1f",ADC_Read(1));
         //UART_Write_Text(r);
         __delay_us(200);
