@@ -27,11 +27,11 @@ void __interrupt(high_priority) Hi_ISR(void)
         else{
             count=0;
             memset(r,'\0',sizeof(r));
-            sprintf(r,"%.2f",ADC_Read(0));
+            sprintf(r,"%s%.2f",r,ADC_Read(0));
             __delay_us(200);
         
             memset(r,'\0',sizeof(r));
-            sprintf(r,"%.1f",ADC_Read(1));
+            sprintf(r,"%s%.1f",r,ADC_Read(1));
         }
         PIR1bits.TMR1IF=0;
         TMR1=65535-(1000000/4)/4;
