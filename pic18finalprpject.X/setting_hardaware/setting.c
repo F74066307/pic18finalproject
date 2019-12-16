@@ -64,7 +64,7 @@ void TMR1_Initialize(){
     PIR1bits.TMR1IF=0;
     PIE1bits.TMR1IE=1;
     IPR1bits.TMR1IP=1;
-    TMR1=65535-(1000000/4)/4;
+    TMR1=65535-(1000000/4)/4;//0.25s
 }
 
 
@@ -80,7 +80,7 @@ void SYSTEM_Initialize(void)
 
 void OSCILLATOR_Initialize(void)
 {
-    IRCF2 = 1; //1 MHz
-    IRCF1 = 0;
+    IRCF2 = 1; //4 MHz
+    IRCF1 = 1;
     IRCF0 = 0;
 }

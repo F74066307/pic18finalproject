@@ -6,6 +6,8 @@
 #include <pic18f4520.h>
 
 char r[15];
+int count=0;
+int cycle=4;
 
 void main(void) 
 {
@@ -19,12 +21,18 @@ void main(void)
 void __interrupt(high_priority) Hi_ISR(void)
 {
     if(PIR1bits.TMR1IF&&PIE1bits.TMR1IE) {
-        memset(r,'\0',sizeof(r));
-        sprintf(r,"%.2f",ADC_Read(0));
-        __delay_us(200);
+        if(count<cycle){
+            count++;
+        }
+        else{
+            count=0;
+            memset(r,'\0',sizeof(r));
+            sprintf(r,"%.2f",ADC_Read(0));
+            __delay_us(200);
         
-        memset(r,'\0',sizeof(r));
-        sprintf(r,"%.1f",ADC_Read(1));
+            memset(r,'\0',sizeof(r));
+            sprintf(r,"%.1f",ADC_Read(1));
+        }
         PIR1bits.TMR1IF=0;
         TMR1=65535-(1000000/4)/4;
     }
