@@ -3,17 +3,37 @@
 #include <stdlib.h>
 #include <math.h>
 
-//https://qiita.com/erukiti/items/1d9658f7c363e79d051b
-#define MQ135_DEFAULTPPM 399 //default ppm of CO2 for calibration
-#define MQ135_DEFAULTRO 68550 //default Ro for MQ135_DEFAULTPPM ppm of CO2
-#define MQ135_SCALINGFACTOR 116.6020682 //CO2 gas value
-#define MQ135_EXPONENT -2.769034857 //CO2 gas value
-#define MQ135_MAXRSRO 2.428 //for CO2
-#define MQ135_MINRSRO 0.358 //for CO2
+//
+double LPGCurve[3]  =  {2.3,0.21,-0.47}; 
+double COCurve[3]  =  {2.3,0.72,-0.34};   
+double SmokeCurve[3] = {2.3,0.53,-0.44};                                                       
+double Ro = 10.0;  
+int RL_VALUE = 1; 
+ 
+int GAS_LPG = 0;
+int GAS_CO = 1;
+int GAS_SMOKE = 2;
 
-#define RO 2000.0
+double lpg = 0;
+double co = 0;
+double smoke = 0;
 
-double mq135_ro = RO;
+
+
+int MQGetPercentage(double rs_ro_ratio, double *pcurve) {
+  return (pow(10,(((log(rs_ro_ratio)-pcurve[1])/pcurve[2]) + pcurve[0])));
+}
+
+double MQGetGasPercentage(double rs_ro_ratio, int gas_id) {
+  if ( gas_id == GAS_LPG ) {
+     return MQGetPercentage(rs_ro_ratio,LPGCurve);
+  } else if ( gas_id == GAS_CO ) {
+     return MQGetPercentage(rs_ro_ratio,COCurve);
+  } else if ( gas_id == GAS_SMOKE ) {
+     return MQGetPercentage(rs_ro_ratio,SmokeCurve);
+  }    
+  return 0;
+}
 
 void ADC_Initialize(void) {
     
@@ -23,13 +43,22 @@ void ADC_Initialize(void) {
     ADRES=0;
 }
 
-double mq135_getppm(long resvalue, long ro) {
-  double ret = 0;
-  double validinterval = resvalue / (double)ro;
-  if (validinterval < MQ135_MAXRSRO && validinterval > MQ135_MINRSRO) {
-    ret = (double)MQ135_SCALINGFACTOR * pow(((double)resvalue / ro), MQ135_EXPONENT);
-  }
-  return ret;
+double *MQ_Read(){
+    int digital;
+    
+    
+    ADCON0bits.CHS = 1 ; // Select Channel
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO_nDONE==1);
+    digital = ADRES;
+    double res=5.00*(1023-digital)/1023;
+    lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
+    co = MQGetGasPercentage(res/Ro,GAS_CO);
+    smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
+    ADCON0bits.ADON = 0;
+    double values[3] = {lpg,co,smoke};
+    return values;
 }
 
 double ADC_Read(int channel)
@@ -44,15 +73,9 @@ double ADC_Read(int channel)
     while(ADCON0bits.GO_nDONE==1);
 
     digital = ADRES;
-    if(channel==1){
-        //MQ-135 CO2
-        int val = (RO * (1023 - digital) / digital);
-        result=mq135_getppm(val, MQ135_DEFAULTRO);
-    }
-    else{
         //LM35DZ
         result=digital*4.88/10;
-    }
+
     ADCON0bits.ADON = 0;
     return result;
 }

@@ -5,7 +5,7 @@
 #include "string.h"
 #include <pic18f4520.h>
 
-char r[15];
+char r[100];
 int count=0;
 int cycle=4;
 
@@ -27,11 +27,12 @@ void __interrupt(high_priority) Hi_ISR(void)
         else{
             count=0;
             memset(r,'\0',sizeof(r));
-            sprintf(r,"%s%.2f",r,ADC_Read(0));
+            
+            sprintf(r,"%s%.2f C",r,ADC_Read(0));
             __delay_us(200);
-        
+            double *value=MQ_Read();
             memset(r,'\0',sizeof(r));
-            sprintf(r,"%s%.1f",r,ADC_Read(1));
+            sprintf(r,"%s lpg=%.1f ppm CO=%.1f ppm smoke=%.1f ppm",r,value[0],value[1],value[2]);
         }
         PIR1bits.TMR1IF=0;
         TMR1=65535-(1000000/4)/4;
