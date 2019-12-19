@@ -14,20 +14,28 @@
 
 void Cmd(int Value)
 {
- PORTD = Value;               /* Write the command to data lines         */
- RC0   = 0;                   /* RS-0(command register)                  */
- RC1   = 1;                   /* E-1(enable)                             */
- __delay_us(25);                
- RC1   = 0;                   /* E-0(enable)                             */
+ LATD = Value;               /* Write the command to data lines         */
+ LATCbits.LC4=0;                   /* RS-0(command register)                  */
+    
+ LATCbits.LC6=0;                  /* E-0(enable)                             */
+ __delay_ms(5);  
+ LATCbits.LC6=1;                  /* E-1(enable)                             */
+ Nop();                 
+ LATCbits.LC6=0;                  /* E-0(enable)                             */
+ __delay_ms(5);
 }
  
 void Data(int Value)
 {
- PORTD = Value;               /* Write the character to data lines       */
- RC0   = 1;                   /* RS-1(data register)                     */
- RC1   = 1;                   /* E-1(enable)                             */
- __delay_us(25);                
- RC1   = 0;                   /* E-0(enable)                             */
+ LATD = Value;               /* Write the character to data lines       */
+ LATCbits.LC4=1;                   /* RS-0(command register)                  */
+     
+ LATCbits.LC6=0;                  /* E-0(enable)                             */
+ __delay_ms(5);  
+ LATCbits.LC6=1;                  /* E-1(enable)                             */
+ Nop();              
+ LATCbits.LC6=0;                  /* E-0(enable)                             */
+ __delay_ms(5);
 }
 
 void Send2Lcd(const char Adr, const char *Lcd)
@@ -40,13 +48,20 @@ void Send2Lcd(const char Adr, const char *Lcd)
  }
 }
 
+void LCD_clear(){
+    Cmd(0X01);                   /* Clear Display Command                   */
+}
+
 void LCD_init(){
-    Cmd(0X30);                   /* LCD Specification Commands              */
-    Cmd(0X38);                   /* Double Line Display Command             */
+    
+    __delay_ms(15);              
+    Cmd(0X38);                   /* LCD Specification Commands              */
+    __delay_us(125);   
+    
+    Cmd(0X01);                   /* Clear Display Command                   */
     Cmd(0X06);                   /* Auto Increment Location Address Command */
     Cmd(0X0C);                   /* Display ON Command                      */
-    Cmd(0X01);                   /* Clear Display Command                   */
-    
-    Send2Lcd(0x84,"monitor");  /* Displays string in the first line       */
-    Send2Lcd(0xc5,"start");     /* Displays string in the second line      */
+    __delay_us(1000);
+    Send2Lcd(0x80,"monitor");  /* Displays string in the first line       */
+    Send2Lcd(0xc0,"start");     /* Displays string in the second line      */
 }

@@ -1,4 +1,4 @@
-# 1 "setting_hardaware/interrupt_manager.c"
+# 1 "setting_hardaware/LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "setting_hardaware/interrupt_manager.c" 2
+# 1 "setting_hardaware/LCD.c" 2
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4512,13 +4520,66 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "setting_hardaware/interrupt_manager.c" 2
+# 9 "setting_hardaware/LCD.c" 2
+
+
+# 1 "setting_hardaware/LCD.h" 1
+# 12 "setting_hardaware/LCD.h"
+void Data(int Value);
+void Cmd(int Value);
+void Send2Lcd(const char Adr, const char *Lcd);
+void LCD_init(void);
+# 11 "setting_hardaware/LCD.c" 2
 
 
 
-void INTERRUPT_Initialize (void)
+
+void Cmd(int Value)
 {
-    RCONbits.IPEN = 1;
-    INTCONbits.GIEH = 1;
-    INTCONbits.GIEL = 1;
+ LATD = Value;
+ LATCbits.LC4=0;
+
+ LATCbits.LC6=0;
+ _delay((unsigned long)((5)*(250000/4000.0)));
+ LATCbits.LC6=1;
+ __nop();
+ LATCbits.LC6=0;
+ _delay((unsigned long)((5)*(250000/4000.0)));
+}
+
+void Data(int Value)
+{
+ LATD = Value;
+ LATCbits.LC4=1;
+
+ LATCbits.LC6=0;
+ _delay((unsigned long)((5)*(250000/4000.0)));
+ LATCbits.LC6=1;
+ __nop();
+ LATCbits.LC6=0;
+ _delay((unsigned long)((5)*(250000/4000.0)));
+}
+
+void Send2Lcd(const char Adr, const char *Lcd)
+{
+ Cmd(Adr);
+ while(*Lcd!='\0')
+ {
+  Data(*Lcd);
+  Lcd++;
+ }
+}
+
+void LCD_init(){
+
+    _delay((unsigned long)((15)*(250000/4000.0)));
+    Cmd(0X38);
+    _delay((unsigned long)((125)*(250000/4000000.0)));
+
+    Cmd(0X01);
+    Cmd(0X06);
+    Cmd(0X0C);
+    _delay((unsigned long)((1000)*(250000/4000000.0)));
+    Send2Lcd(0x80,"monitor");
+    Send2Lcd(0xc0,"start");
 }

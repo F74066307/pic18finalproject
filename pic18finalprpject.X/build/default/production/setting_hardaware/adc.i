@@ -4982,7 +4982,7 @@ double yn(int, double);
 double mq135_ro = 2000.0;
 
 void ADC_Initialize(void) {
-    TRISA = 0x03;
+
 
     ADCON1 = 0x0D;
     ADCON2=0x94;

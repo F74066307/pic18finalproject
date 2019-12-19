@@ -10,6 +10,8 @@
 #include "pin_manager.h"
 
 void PIN_MANAGER_Initialize(){
+    ADCON1 = 0x0D; //AN0,AN1->analog,other->digital
+    
     //lcd
     TRISC=0X00;                  /* PORTC(control lines) configured as o/p  */
     TRISD=0X00;                  /* PORTD(data lines) configured as o/p     */

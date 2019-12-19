@@ -4582,6 +4582,7 @@ void OSCILLATOR_Initialize(void);
 # 1 "main.c" 2
 
 
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4720,7 +4721,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 3 "main.c" 2
+# 4 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
@@ -4777,7 +4778,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 4 "main.c" 2
+# 5 "main.c" 2
+
 
 
 char r[15];
@@ -4785,16 +4787,7 @@ char r[15];
 void main(void)
 {
     SYSTEM_Initialize() ;
-    while(1) {
-        memset(r,'\0',sizeof(r));
-        sprintf(r,"%.2f",ADC_Read(0));
-        _delay((unsigned long)((200)*(4000000/4000000.0)));
-
-        memset(r,'\0',sizeof(r));
-        sprintf(r,"%.1f",ADC_Read(1));
-        _delay((unsigned long)((200)*(4000000/4000000.0)));
-
-    }
+    while(1);
     return;
 
 }
@@ -4802,11 +4795,5 @@ void main(void)
 
 void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
 {
-    if(PIR1bits.CCP1IF == 1) {
-        RC2 ^= 1;
-        PIR1bits.CCP1IF = 0;
-        TMR3 = 0;
-    }
-
-    return ;
+# 34 "main.c"
 }

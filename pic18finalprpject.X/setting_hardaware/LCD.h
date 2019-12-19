@@ -7,13 +7,13 @@
 #ifndef LCD_H
 #define	LCD_H
 
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 250000
 
 void Data(int Value);           
 void Cmd(int Value);            
 void Send2Lcd(const char Adr, const char *Lcd);
-void Delay_us(int us);
 void LCD_init(void);
+void LCD_clear(void);
 
 #endif	/* LCD_H */
 

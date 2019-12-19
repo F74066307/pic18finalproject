@@ -4641,24 +4641,29 @@ void OSCILLATOR_Initialize(void);
 
 
 void TMR1_Initialize(){
-
+    T1CONbits.RD16=1;
+    T1CONbits.T1CKPS=2;
+    T1CONbits.TMR1ON=1;
+    PIR1bits.TMR1IF=0;
+    PIE1bits.TMR1IE=1;
+    IPR1bits.TMR1IP=1;
+    TMR1=65535-(1000000/4)/4;
 }
-void TMR2_Initialize(){
 
-}
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    LCD_init();
     UART_Initialize();
     ADC_Initialize();
+    LCD_init();
+    TMR1_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
     IRCF2 = 1;
-    IRCF1 = 1;
+    IRCF1 = 0;
     IRCF0 = 0;
 }

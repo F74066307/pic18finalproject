@@ -1,8 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1477 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1477: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"4690
+"4690 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4690: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
 "4619
@@ -480,9 +477,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ADC_Initialize ]
 [f ]
-"19
-[; ;setting_hardaware/adc.c: 19:     TRISA = 0x03;
-[e = _TRISA -> -> 3 `i `uc ]
 "21
 [; ;setting_hardaware/adc.c: 21:     ADCON1 = 0x0D;
 [e = _ADCON1 -> -> 13 `i `uc ]
