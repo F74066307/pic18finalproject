@@ -63,12 +63,6 @@ void __interrupt(low_priority)  Lo_ISR(void)
         
         MyusartRead();
     }
-    if(PIR1bits.TMR1IF){
-        count++;
-        TMR1 = 62410;
-        PIR1bits.TMR1IF=0;
-        
-    }
     
    // process other interrupt sources here, if required
     return;
