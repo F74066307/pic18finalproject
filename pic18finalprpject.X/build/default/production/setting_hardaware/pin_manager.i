@@ -4533,11 +4533,14 @@ void PIN_MANAGER_Initialize(void);
 
 
 void PIN_MANAGER_Initialize(){
+    ADCON1 = 0x0D;
+
 
     TRISC=0X00;
     TRISD=0X00;
 
 
+    TRISBbits.RB0=0;
 
 
     TRISA = 0x03;

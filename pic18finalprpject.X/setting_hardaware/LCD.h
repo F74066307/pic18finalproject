@@ -7,7 +7,7 @@
 #ifndef LCD_H
 #define	LCD_H
 
-#define _XTAL_FREQ 250000
+#define _XTAL_FREQ 4000000
 
 void Data(int Value);           
 void Cmd(int Value);            

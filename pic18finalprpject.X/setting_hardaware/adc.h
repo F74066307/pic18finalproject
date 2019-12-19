@@ -31,8 +31,9 @@
 #ifndef _ADC_H
 #define	_ADC_H
 
-void ADC_Initialize() ;
 double ADC_Read(int channel);
+void MQ_Read(double* values);
+void ADC_Initialize(void);
 
 #endif
 

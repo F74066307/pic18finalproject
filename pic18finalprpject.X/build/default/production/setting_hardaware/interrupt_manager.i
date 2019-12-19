@@ -4515,6 +4515,12 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "setting_hardaware/interrupt_manager.c" 2
 
 
+# 1 "setting_hardaware/interrupt_manager.h" 1
+
+
+void INTERRUPT_Initialize(void);
+# 3 "setting_hardaware/interrupt_manager.c" 2
+
 
 void INTERRUPT_Initialize (void)
 {

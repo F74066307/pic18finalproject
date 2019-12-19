@@ -1,5 +1,5 @@
 #include <xc.h>
-    //setting TX/RX
+#include "uart.h"
 
 char mystring[10];
 int lenStr = 0;

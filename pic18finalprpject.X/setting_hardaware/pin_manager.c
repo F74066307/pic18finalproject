@@ -17,6 +17,7 @@ void PIN_MANAGER_Initialize(){
     TRISD=0X00;                  /* PORTD(data lines) configured as o/p     */
     
     //buzzer
+    TRISBbits.RB0=0;
     
     //sensor
     TRISA = 0x03;//RA0,RA1 input

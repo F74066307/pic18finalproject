@@ -8,6 +8,7 @@
 char r[100];
 int count=0;
 int cycle=4;
+double value[3];
 
 void main(void) 
 {
@@ -27,15 +28,27 @@ void __interrupt(high_priority) Hi_ISR(void)
         else{
             count=0;
             memset(r,'\0',sizeof(r));
-            
+            __delay_us(100);
             sprintf(r,"%s%.2f C",r,ADC_Read(0));
-            __delay_us(200);
-            double *value=MQ_Read();
+            __delay_us(100);
+            MQ_Read(value);
             memset(r,'\0',sizeof(r));
             sprintf(r,"%s lpg=%.1f ppm CO=%.1f ppm smoke=%.1f ppm",r,value[0],value[1],value[2]);
+            
+            //see whether out of limit and bep buzzer
+            /*
+             if(...){
+             * speak();
+             * __delay_ms(40);
+             * speak();
+             * }
+             */
+            
+            //change cycle if in need
+            //........
         }
         PIR1bits.TMR1IF=0;
-        TMR1=65535-(1000000/4)/4;
+        TMR1=timer_val;
     }
 
     return ;

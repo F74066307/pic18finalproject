@@ -18,11 +18,11 @@ void Cmd(int Value)
  LATCbits.LC4=0;                   /* RS-0(command register)                  */
     
  LATCbits.LC6=0;                  /* E-0(enable)                             */
- __delay_ms(5);  
+ __delay_us(25);  
  LATCbits.LC6=1;                  /* E-1(enable)                             */
- Nop();                 
+ __delay_us(25);                  
  LATCbits.LC6=0;                  /* E-0(enable)                             */
- __delay_ms(5);
+ __delay_ms(3);
 }
  
 void Data(int Value)
@@ -31,11 +31,11 @@ void Data(int Value)
  LATCbits.LC4=1;                   /* RS-0(command register)                  */
      
  LATCbits.LC6=0;                  /* E-0(enable)                             */
- __delay_ms(5);  
+ __delay_us(25); 
  LATCbits.LC6=1;                  /* E-1(enable)                             */
- Nop();              
+ __delay_us(25);               
  LATCbits.LC6=0;                  /* E-0(enable)                             */
- __delay_ms(5);
+ __delay_ms(3);
 }
 
 void Send2Lcd(const char Adr, const char *Lcd)
@@ -61,7 +61,7 @@ void LCD_init(){
     Cmd(0X01);                   /* Clear Display Command                   */
     Cmd(0X06);                   /* Auto Increment Location Address Command */
     Cmd(0X0C);                   /* Display ON Command                      */
-    __delay_us(1000);
+    __delay_us(125);
     Send2Lcd(0x80,"monitor");  /* Displays string in the first line       */
     Send2Lcd(0xc0,"start");     /* Displays string in the second line      */
 }

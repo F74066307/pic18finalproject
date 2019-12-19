@@ -4514,6 +4514,19 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 1 "setting_hardaware/uart.c" 2
 
+# 1 "setting_hardaware/uart.h" 1
+
+
+
+void UART_Initialize(void);
+char * GetString();
+void UART_Write(unsigned char data);
+void UART_Write_Text(char* text);
+void ClearBuffer();
+void MyusartRead();
+int GetCount();
+void ResetCount();
+# 2 "setting_hardaware/uart.c" 2
 
 
 char mystring[10];
@@ -4577,12 +4590,6 @@ void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void)
         }
 
         MyusartRead();
-    }
-    if(PIR1bits.TMR1IF){
-        count++;
-        TMR1 = 62410;
-        PIR1bits.TMR1IF=0;
-
     }
 
 

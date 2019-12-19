@@ -57,6 +57,8 @@
 
 #include "setting.h"
 
+int timer_val=65535-(1000000/4)/4;
+
 void TMR1_Initialize(){
     T1CONbits.RD16=1;
     T1CONbits.T1CKPS=2;//pres=4
@@ -64,7 +66,7 @@ void TMR1_Initialize(){
     PIR1bits.TMR1IF=0;
     PIE1bits.TMR1IE=1;
     IPR1bits.TMR1IP=1;
-    TMR1=65535-(1000000/4)/4;//0.25s
+    TMR1=timer_val;//0.25s
 }
 
 
@@ -73,7 +75,7 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     LCD_init();
-    UART_Initialize();
+    buzzer_init();
     ADC_Initialize();
     TMR1_Initialize();
 }

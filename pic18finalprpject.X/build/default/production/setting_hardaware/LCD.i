@@ -4528,8 +4528,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 void Data(int Value);
 void Cmd(int Value);
 void Send2Lcd(const char Adr, const char *Lcd);
-void Delay_us(int us);
 void LCD_init(void);
+void LCD_clear(void);
 # 11 "setting_hardaware/LCD.c" 2
 
 
@@ -4537,26 +4537,28 @@ void LCD_init(void);
 
 void Cmd(int Value)
 {
- PORTD = Value;
- RC2 = 0;
+ LATD = Value;
+ LATCbits.LC4=0;
 
- RC3 = 0;
- _delay((unsigned long)((25)*(1000000/4000000.0)));
- RC3 = 1;
- _delay((unsigned long)((25)*(1000000/4000000.0)));
- RC3 = 0;
+ LATCbits.LC6=0;
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
+ LATCbits.LC6=1;
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
+ LATCbits.LC6=0;
+ _delay((unsigned long)((3)*(4000000/4000.0)));
 }
 
 void Data(int Value)
 {
- PORTD = Value;
- RC2 = 1;
+ LATD = Value;
+ LATCbits.LC4=1;
 
- RC3 = 0;
- _delay((unsigned long)((25)*(1000000/4000000.0)));
- RC3 = 1;
- _delay((unsigned long)((25)*(1000000/4000000.0)));
- RC3 = 0;
+ LATCbits.LC6=0;
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
+ LATCbits.LC6=1;
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
+ LATCbits.LC6=0;
+ _delay((unsigned long)((3)*(4000000/4000.0)));
 }
 
 void Send2Lcd(const char Adr, const char *Lcd)
@@ -4569,19 +4571,20 @@ void Send2Lcd(const char Adr, const char *Lcd)
  }
 }
 
+void LCD_clear(){
+    Cmd(0X01);
+}
+
 void LCD_init(){
-    _delay((unsigned long)((40)*(1000000/4000000.0)));
-     Cmd(0X30);
-    _delay((unsigned long)((40)*(1000000/4000000.0)));
-     Cmd(0X30);
-    _delay((unsigned long)((40)*(1000000/4000000.0)));
-    Cmd(0X30);
-    _delay((unsigned long)((40)*(1000000/4000000.0)));
+
+    _delay((unsigned long)((15)*(4000000/4000.0)));
     Cmd(0X38);
+    _delay((unsigned long)((125)*(4000000/4000000.0)));
+
+    Cmd(0X01);
     Cmd(0X06);
     Cmd(0X0C);
-    Cmd(0X01);
-    _delay((unsigned long)((2000)*(1000000/4000000.0)));
-    Send2Lcd(0x84,"monitor");
-    Send2Lcd(0xc5,"start");
+    _delay((unsigned long)((125)*(4000000/4000000.0)));
+    Send2Lcd(0x80,"monitor");
+    Send2Lcd(0xc0,"start");
 }

@@ -2,6 +2,7 @@
 #include <pic18f4520.h>
 #include <stdlib.h>
 #include <math.h>
+#include "adc.h"
 
 //
 double LPGCurve[3]  =  {2.3,0.21,-0.47}; 
@@ -43,7 +44,7 @@ void ADC_Initialize(void) {
     ADRES=0;
 }
 
-double *MQ_Read(){
+void MQ_Read(double* values){
     int digital;
     
     
@@ -57,8 +58,10 @@ double *MQ_Read(){
     co = MQGetGasPercentage(res/Ro,GAS_CO);
     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
     ADCON0bits.ADON = 0;
-    double values[3] = {lpg,co,smoke};
-    return values;
+    
+    values[0]=lpg;
+    values[0]=co;
+    values[0]=smoke;
 }
 
 double ADC_Read(int channel)

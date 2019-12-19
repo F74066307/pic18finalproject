@@ -1,5 +1,6 @@
 #include <xc.h>
 #include <pic18f4520.h>
+#include "interrupt_manager.h"
 
 void INTERRUPT_Initialize (void)
 {

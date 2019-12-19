@@ -467,24 +467,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"4 setting_hardaware/interrupt_manager.c
-[; ;setting_hardaware/interrupt_manager.c: 4: void INTERRUPT_Initialize (void)
+"5 setting_hardaware/interrupt_manager.c
+[; ;setting_hardaware/interrupt_manager.c: 5: void INTERRUPT_Initialize (void)
 [v _INTERRUPT_Initialize `(v ~T0 @X0 1 ef ]
-"5
-[; ;setting_hardaware/interrupt_manager.c: 5: {
+"6
+[; ;setting_hardaware/interrupt_manager.c: 6: {
 {
 [e :U _INTERRUPT_Initialize ]
 [f ]
-"6
-[; ;setting_hardaware/interrupt_manager.c: 6:     RCONbits.IPEN = 1;
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
 "7
-[; ;setting_hardaware/interrupt_manager.c: 7:     INTCONbits.GIEH = 1;
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 7:     RCONbits.IPEN = 1;
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
 "8
-[; ;setting_hardaware/interrupt_manager.c: 8:     INTCONbits.GIEL = 1;
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 8:     INTCONbits.GIEH = 1;
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
 "9
-[; ;setting_hardaware/interrupt_manager.c: 9: }
+[; ;setting_hardaware/interrupt_manager.c: 9:     INTCONbits.GIEL = 1;
+[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
+"10
+[; ;setting_hardaware/interrupt_manager.c: 10: }
 [e :UE 281 ]
 }
