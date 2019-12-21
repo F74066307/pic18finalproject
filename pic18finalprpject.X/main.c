@@ -33,7 +33,7 @@ void __interrupt(high_priority) Hi_ISR(void)
             __delay_us(100);
             MQ_Read(value);
             memset(r,'\0',sizeof(r));
-            sprintf(r,"%s lpg=%.1f ppm CO=%.1f ppm smoke=%.1f ppm",r,value[0],value[1],value[2]);
+            sprintf(r,"%s%d %d %d",r,(int)value[0],(int)value[1],(int)value[2]);
             
             //see whether out of limit and bep buzzer
             /*

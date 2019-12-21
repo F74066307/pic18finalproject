@@ -60,8 +60,8 @@ void MQ_Read(double* values){
     ADCON0bits.ADON = 0;
     
     values[0]=lpg;
-    values[0]=co;
-    values[0]=smoke;
+    values[1]=co;
+    values[2]=smoke;
 }
 
 double ADC_Read(int channel)
