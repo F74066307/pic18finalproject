@@ -479,11 +479,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/interrupt_manager.c: 7:     RCONbits.IPEN = 1;
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
 "8
-[; ;setting_hardaware/interrupt_manager.c: 8:     INTCONbits.GIEH = 1;
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-"9
-[; ;setting_hardaware/interrupt_manager.c: 9:     INTCONbits.GIEL = 1;
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
+[; ;setting_hardaware/interrupt_manager.c: 8:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "10
 [; ;setting_hardaware/interrupt_manager.c: 10: }
 [e :UE 281 ]

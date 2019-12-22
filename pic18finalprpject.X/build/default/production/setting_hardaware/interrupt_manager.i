@@ -4525,6 +4525,6 @@ void INTERRUPT_Initialize(void);
 void INTERRUPT_Initialize (void)
 {
     RCONbits.IPEN = 1;
-    INTCONbits.GIEH = 1;
-    INTCONbits.GIEL = 1;
+    INTCONbits.GIE = 1;
+
 }

@@ -1,10 +1,61 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"17 ./setting_hardaware/setting.h
-[; ;./setting_hardaware/setting.h: 17: void SYSTEM_Initialize(void);
+"18 ./setting_hardaware/setting.h
+[; ;./setting_hardaware/setting.h: 18: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 [t ~ __interrupt . k ]
 [t T41 __interrupt high_priority ]
+"2677 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2677:     struct {
+[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S96 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2687
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2687:     struct {
+[s S97 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S97 . . TX1IF RC1IF ]
+"2676
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2676: typedef union {
+[u S95 `S96 1 `S97 1 ]
+[n S95 . . . ]
+"2693
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2693: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS95 ~T0 @X0 0 e@3998 ]
+"2600
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2600:     struct {
+[s S93 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S93 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2610
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2610:     struct {
+[s S94 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . . TX1IE RC1IE ]
+"2599
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2599: typedef union {
+[u S92 `S93 1 `S94 1 ]
+[n S92 . . . ]
+"2616
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2616: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS92 ~T0 @X0 0 e@3997 ]
+"29 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
+[v F2518 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF2518 ~T0 @X0 0 e ]
+[p i __delay ]
+"113 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"34 ./setting_hardaware/adc.h
+[; ;./setting_hardaware/adc.h: 34: double ADC_Read(int channel);
+[v _ADC_Read `(d ~T0 @X0 0 ef1`i ]
+"16 ./setting_hardaware/LCD.h
+[; ;./setting_hardaware/LCD.h: 16: void LCD_clear(void);
+[v _LCD_clear `(v ~T0 @X0 0 ef ]
+"14
+[; ;./setting_hardaware/LCD.h: 14: void Send2Lcd(const char Adr, const char *Lcd);
+[v _Send2Lcd `(v ~T0 @X0 0 ef2`Cuc`*Cuc ]
+"5633 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
+[v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -419,44 +470,118 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"20 ./setting_hardaware/setting.h
+[; ;./setting_hardaware/setting.h: 20: int timer_val;
+[v _timer_val `i ~T0 @X0 1 e ]
 "8 main.c
-[; ;main.c: 8: char r[15];
-[v _r `uc ~T0 @X0 -> 15 `i e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
+[; ;main.c: 8: char r[100];
+[v _r `uc ~T0 @X0 -> 100 `i e ]
+"9
+[; ;main.c: 9: int count=0;
+[v _count `i ~T0 @X0 1 e ]
+[i _count
+-> 0 `i
+]
 "10
-[; ;main.c: 10: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;main.c: 10: int cycle=4;
+[v _cycle `i ~T0 @X0 1 e ]
+[i _cycle
+-> 4 `i
+]
 "11
-[; ;main.c: 11: {
+[; ;main.c: 11: double value[3];
+[v _value `d ~T0 @X0 -> 3 `i e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"13
+[; ;main.c: 13: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"14
+[; ;main.c: 14: {
 {
 [e :U _main ]
 [f ]
-"12
-[; ;main.c: 12:     SYSTEM_Initialize() ;
+"15
+[; ;main.c: 15:     SYSTEM_Initialize() ;
 [e ( _SYSTEM_Initialize ..  ]
-"13
-[; ;main.c: 13:     while(1);
+"16
+[; ;main.c: 16:     while(1);
 [e :U 286 ]
 [e :U 285 ]
 [e $U 286  ]
 [e :U 287 ]
-"14
-[; ;main.c: 14:     return;
+"17
+[; ;main.c: 17:     return;
 [e $UE 284  ]
-"16
-[; ;main.c: 16: }
+"19
+[; ;main.c: 19: }
 [e :UE 284 ]
 }
 [v $root$_Hi_ISR `(v ~T0 @X0 0 e ]
-"19
-[; ;main.c: 19: void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
+"22
+[; ;main.c: 22: void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
 [v _Hi_ISR `(v ~T41 @X0 1 ef ]
-"20
-[; ;main.c: 20: {
+"23
+[; ;main.c: 23: {
 {
 [e :U _Hi_ISR ]
 [f ]
+"24
+[; ;main.c: 24:     if(PIR1bits.TMR1IF&&PIE1bits.TMR1IE) {
+[e $ ! && != -> . . _PIR1bits 0 0 `i -> 0 `i != -> . . _PIE1bits 0 0 `i -> 0 `i 289  ]
+{
+"25
+[; ;main.c: 25:         if(count<cycle){
+[e $ ! < _count _cycle 290  ]
+{
+"26
+[; ;main.c: 26:             count++;
+[e ++ _count -> 1 `i ]
+"27
+[; ;main.c: 27:         }
+}
+[e $U 291  ]
+"28
+[; ;main.c: 28:         else{
+[e :U 290 ]
+{
+"31
+[; ;main.c: 31:             count=0;
+[e = _count -> 0 `i ]
+"32
+[; ;main.c: 32:             memset(r,'\0',sizeof(r));
+[e ( _memset (3 , , -> &U _r `*v -> -> 0 `ui `i -> # _r `ui ]
 "34
-[; ;main.c: 34: }
+[; ;main.c: 34:             _delay((unsigned long)((100)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"35
+[; ;main.c: 35:             sprintf(r,"%s%.2f C",r,ADC_Read(0));
+[e ( _sprintf (1 , , (. , &U _r :s 1C &U _r ( _ADC_Read (1 -> 0 `i ]
+"37
+[; ;main.c: 37:             LCD_clear();
+[e ( _LCD_clear ..  ]
+"38
+[; ;main.c: 38:             Send2Lcd(0x80,r);
+[e ( _Send2Lcd (2 , -> -> 128 `i `uc -> &U _r `*Cuc ]
+"59
+[; ;main.c: 59:         }
+}
+[e :U 291 ]
+"60
+[; ;main.c: 60:         PIR1bits.TMR1IF=0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"61
+[; ;main.c: 61:         TMR1=timer_val;
+[e = _TMR1 -> _timer_val `us ]
+"62
+[; ;main.c: 62:     }
+}
+[e :U 289 ]
+"64
+[; ;main.c: 64:     return ;
+[e $UE 288  ]
+"65
+[; ;main.c: 65: }
 [e :UE 288 ]
 }
+[p f _sprintf 8724480 ]
+[a 1C 37 115 37 46 50 102 32 67 0 ]

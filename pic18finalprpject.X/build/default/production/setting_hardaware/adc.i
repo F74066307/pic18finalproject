@@ -5021,10 +5021,10 @@ double MQGetGasPercentage(double rs_ro_ratio, int gas_id) {
 
 void ADC_Initialize(void) {
 
-
     ADCON1 = 0x0D;
     ADCON2=0x94;
     ADRES=0;
+
 }
 
 void MQ_Read(double* values){
@@ -5043,8 +5043,8 @@ void MQ_Read(double* values){
     ADCON0bits.ADON = 0;
 
     values[0]=lpg;
-    values[0]=co;
-    values[0]=smoke;
+    values[1]=co;
+    values[2]=smoke;
 }
 
 double ADC_Read(int channel)
@@ -5060,8 +5060,7 @@ double ADC_Read(int channel)
 
     digital = ADRES;
 
-        result=digital*4.88/10;
-
+    result=digital*5.0/1024.0*100.0;
     ADCON0bits.ADON = 0;
     return result;
 }

@@ -47,9 +47,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34 ./setting_hardaware/adc.h
 [; ;./setting_hardaware/adc.h: 34: double ADC_Read(int channel);
 [v _ADC_Read `(d ~T0 @X0 0 ef1`i ]
-"35
-[; ;./setting_hardaware/adc.h: 35: void MQ_Read(double* values);
-[v _MQ_Read `(v ~T0 @X0 0 ef1`*d ]
+"16 ./setting_hardaware/LCD.h
+[; ;./setting_hardaware/LCD.h: 16: void LCD_clear(void);
+[v _LCD_clear `(v ~T0 @X0 0 ef ]
+"14
+[; ;./setting_hardaware/LCD.h: 14: void Send2Lcd(const char Adr, const char *Lcd);
+[v _Send2Lcd `(v ~T0 @X0 0 ef2`Cuc`*Cuc ]
 "5633 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
@@ -541,51 +544,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 28:         else{
 [e :U 290 ]
 {
-"29
-[; ;main.c: 29:             count=0;
-[e = _count -> 0 `i ]
-"30
-[; ;main.c: 30:             memset(r,'\0',sizeof(r));
-[e ( _memset (3 , , -> &U _r `*v -> -> 0 `ui `i -> # _r `ui ]
 "31
-[; ;main.c: 31:             _delay((unsigned long)((100)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 31:             count=0;
+[e = _count -> 0 `i ]
 "32
-[; ;main.c: 32:             sprintf(r,"%s%.2f C",r,ADC_Read(0));
-[e ( _sprintf (1 , , (. , &U _r :s 1C &U _r ( _ADC_Read (1 -> 0 `i ]
-"33
-[; ;main.c: 33:             _delay((unsigned long)((100)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"34
-[; ;main.c: 34:             MQ_Read(value);
-[e ( _MQ_Read (1 &U _value ]
-"35
-[; ;main.c: 35:             memset(r,'\0',sizeof(r));
+[; ;main.c: 32:             memset(r,'\0',sizeof(r));
 [e ( _memset (3 , , -> &U _r `*v -> -> 0 `ui `i -> # _r `ui ]
-"36
-[; ;main.c: 36:             sprintf(r,"%s lpg=%.1f ppm CO=%.1f ppm smoke=%.1f ppm",r,value[0],value[1],value[2]);
-[e ( _sprintf (1 , , , , (. , &U _r :s 2C &U _r *U + &U _value * -> -> -> 0 `i `ui `ux -> -> # *U &U _value `ui `ux *U + &U _value * -> -> -> 1 `i `ui `ux -> -> # *U &U _value `ui `ux *U + &U _value * -> -> -> 2 `i `ui `ux -> -> # *U &U _value `ui `ux ]
-"49
-[; ;main.c: 49:         }
+"34
+[; ;main.c: 34:             _delay((unsigned long)((100)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"35
+[; ;main.c: 35:             sprintf(r,"%s%.2f C",r,ADC_Read(0));
+[e ( _sprintf (1 , , (. , &U _r :s 1C &U _r ( _ADC_Read (1 -> 0 `i ]
+"37
+[; ;main.c: 37:             LCD_clear();
+[e ( _LCD_clear ..  ]
+"38
+[; ;main.c: 38:             Send2Lcd(0x80,r);
+[e ( _Send2Lcd (2 , -> -> 128 `i `uc -> &U _r `*Cuc ]
+"59
+[; ;main.c: 59:         }
 }
 [e :U 291 ]
-"50
-[; ;main.c: 50:         PIR1bits.TMR1IF=0;
+"60
+[; ;main.c: 60:         PIR1bits.TMR1IF=0;
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:         TMR1=timer_val;
+"61
+[; ;main.c: 61:         TMR1=timer_val;
 [e = _TMR1 -> _timer_val `us ]
-"52
-[; ;main.c: 52:     }
+"62
+[; ;main.c: 62:     }
 }
 [e :U 289 ]
-"54
-[; ;main.c: 54:     return ;
+"64
+[; ;main.c: 64:     return ;
 [e $UE 288  ]
-"55
-[; ;main.c: 55: }
+"65
+[; ;main.c: 65: }
 [e :UE 288 ]
 }
 [p f _sprintf 8724480 ]
-[a 2C 37 115 32 108 112 103 61 37 46 49 102 32 112 112 109 32 67 79 61 37 46 49 102 32 112 112 109 32 115 109 111 107 101 61 37 46 49 102 32 112 112 109 0 ]
 [a 1C 37 115 37 46 50 102 32 67 0 ]

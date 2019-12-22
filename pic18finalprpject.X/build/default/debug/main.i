@@ -4546,8 +4546,9 @@ void CCP1_Initialize();
 
 # 1 "./setting_hardaware/adc.h" 1
 # 34 "./setting_hardaware/adc.h"
-void ADC_Initialize() ;
 double ADC_Read(int channel);
+void MQ_Read(double* values);
+void ADC_Initialize(void);
 # 10 "./setting_hardaware/setting.h" 2
 
 # 1 "./setting_hardaware/interrupt_manager.h" 1
@@ -4571,13 +4572,22 @@ void Data(int Value);
 void Cmd(int Value);
 void Send2Lcd(const char Adr, const char *Lcd);
 void LCD_init(void);
+void LCD_clear(void);
 # 13 "./setting_hardaware/setting.h" 2
+
+# 1 "./setting_hardaware/buzzer.h" 1
+
+
+void speak(int ms);
+void buzzer_init(void);
+# 14 "./setting_hardaware/setting.h" 2
 
 
 
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
+int timer_val;
 # 1 "main.c" 2
 
 
@@ -4781,7 +4791,10 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 
-char r[15];
+char r[100];
+int count=0;
+int cycle=4;
+double value[3];
 
 void main(void)
 {
@@ -4794,5 +4807,26 @@ void main(void)
 
 void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
 {
-# 34 "main.c"
+    if(PIR1bits.TMR1IF&&PIE1bits.TMR1IE) {
+        if(count<cycle){
+            count++;
+        }
+        else{
+
+
+            count=0;
+            memset(r,'\0',sizeof(r));
+
+            _delay((unsigned long)((100)*(4000000/4000000.0)));
+            sprintf(r,"%s%.2f C",r,ADC_Read(0));
+
+            LCD_clear();
+            Send2Lcd(0x80,r);
+# 59 "main.c"
+        }
+        PIR1bits.TMR1IF=0;
+        TMR1=timer_val;
+    }
+
+    return ;
 }

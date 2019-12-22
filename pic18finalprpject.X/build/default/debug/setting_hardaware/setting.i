@@ -4604,8 +4604,9 @@ void CCP1_Initialize();
 
 # 1 "setting_hardaware/adc.h" 1
 # 34 "setting_hardaware/adc.h"
-void ADC_Initialize() ;
 double ADC_Read(int channel);
+void MQ_Read(double* values);
+void ADC_Initialize(void);
 # 10 "setting_hardaware/setting.h" 2
 
 # 1 "setting_hardaware/interrupt_manager.h" 1
@@ -4629,15 +4630,26 @@ void Data(int Value);
 void Cmd(int Value);
 void Send2Lcd(const char Adr, const char *Lcd);
 void LCD_init(void);
+void LCD_clear(void);
 # 13 "setting_hardaware/setting.h" 2
+
+# 1 "setting_hardaware/buzzer.h" 1
+
+
+void speak(int ms);
+void buzzer_init(void);
+# 14 "setting_hardaware/setting.h" 2
 
 
 
 
 void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
+int timer_val;
 # 58 "setting_hardaware/setting.c" 2
 
+
+int timer_val=65535-(1000000/4)/4;
 
 void TMR1_Initialize(){
     T1CONbits.RD16=1;
@@ -4646,23 +4658,24 @@ void TMR1_Initialize(){
     PIR1bits.TMR1IF=0;
     PIE1bits.TMR1IE=1;
     IPR1bits.TMR1IP=1;
-    TMR1=65535-(1000000/4)/4;
+    TMR1=timer_val;
 }
 
 
 void SYSTEM_Initialize(void)
 {
+    INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-
-
     LCD_init();
-
+    buzzer_init();
+    ADC_Initialize();
+    TMR1_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    IRCF2 = 0;
+    IRCF2 = 1;
     IRCF1 = 1;
     IRCF0 = 0;
 }

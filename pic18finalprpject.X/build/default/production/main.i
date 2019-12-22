@@ -4812,15 +4812,17 @@ void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
             count++;
         }
         else{
+
+
             count=0;
             memset(r,'\0',sizeof(r));
+
             _delay((unsigned long)((100)*(4000000/4000000.0)));
             sprintf(r,"%s%.2f C",r,ADC_Read(0));
-            _delay((unsigned long)((100)*(4000000/4000000.0)));
-            MQ_Read(value);
-            memset(r,'\0',sizeof(r));
-            sprintf(r,"%s lpg=%.1f ppm CO=%.1f ppm smoke=%.1f ppm",r,value[0],value[1],value[2]);
-# 49 "main.c"
+
+            LCD_clear();
+            Send2Lcd(0x80,r);
+# 59 "main.c"
         }
         PIR1bits.TMR1IF=0;
         TMR1=timer_val;

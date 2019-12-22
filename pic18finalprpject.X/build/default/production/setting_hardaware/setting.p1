@@ -70,6 +70,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5633
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
+"3 setting_hardaware/interrupt_manager.h
+[; ;setting_hardaware/interrupt_manager.h: 3: void INTERRUPT_Initialize(void);
+[v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
 "6 setting_hardaware/pin_manager.h
 [; ;setting_hardaware/pin_manager.h: 6: void PIN_MANAGER_Initialize(void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
@@ -624,45 +627,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _SYSTEM_Initialize ]
 [f ]
 "75
-[; ;setting_hardaware/setting.c: 75:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
+[; ;setting_hardaware/setting.c: 75:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
 "76
-[; ;setting_hardaware/setting.c: 76:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
+[; ;setting_hardaware/setting.c: 76:     PIN_MANAGER_Initialize();
+[e ( _PIN_MANAGER_Initialize ..  ]
 "77
-[; ;setting_hardaware/setting.c: 77:     LCD_init();
-[e ( _LCD_init ..  ]
+[; ;setting_hardaware/setting.c: 77:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
 "78
-[; ;setting_hardaware/setting.c: 78:     buzzer_init();
-[e ( _buzzer_init ..  ]
+[; ;setting_hardaware/setting.c: 78:     LCD_init();
+[e ( _LCD_init ..  ]
 "79
-[; ;setting_hardaware/setting.c: 79:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
+[; ;setting_hardaware/setting.c: 79:     buzzer_init();
+[e ( _buzzer_init ..  ]
 "80
-[; ;setting_hardaware/setting.c: 80:     TMR1_Initialize();
-[e ( _TMR1_Initialize ..  ]
+[; ;setting_hardaware/setting.c: 80:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
 "81
-[; ;setting_hardaware/setting.c: 81: }
+[; ;setting_hardaware/setting.c: 81:     TMR1_Initialize();
+[e ( _TMR1_Initialize ..  ]
+"82
+[; ;setting_hardaware/setting.c: 82: }
 [e :UE 282 ]
 }
-"83
-[; ;setting_hardaware/setting.c: 83: void OSCILLATOR_Initialize(void)
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "84
-[; ;setting_hardaware/setting.c: 84: {
+[; ;setting_hardaware/setting.c: 84: void OSCILLATOR_Initialize(void)
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"85
+[; ;setting_hardaware/setting.c: 85: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"85
-[; ;setting_hardaware/setting.c: 85:     IRCF2 = 1;
-[e = _IRCF2 -> -> 1 `i `b ]
 "86
-[; ;setting_hardaware/setting.c: 86:     IRCF1 = 1;
-[e = _IRCF1 -> -> 1 `i `b ]
+[; ;setting_hardaware/setting.c: 86:     IRCF2 = 1;
+[e = _IRCF2 -> -> 1 `i `b ]
 "87
-[; ;setting_hardaware/setting.c: 87:     IRCF0 = 0;
-[e = _IRCF0 -> -> 0 `i `b ]
+[; ;setting_hardaware/setting.c: 87:     IRCF1 = 1;
+[e = _IRCF1 -> -> 1 `i `b ]
 "88
-[; ;setting_hardaware/setting.c: 88: }
+[; ;setting_hardaware/setting.c: 88:     IRCF0 = 0;
+[e = _IRCF0 -> -> 0 `i `b ]
+"89
+[; ;setting_hardaware/setting.c: 89: }
 [e :UE 283 ]
 }

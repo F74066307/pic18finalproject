@@ -620,14 +620,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ADC_Initialize ]
 [f ]
-"42
-[; ;setting_hardaware/adc.c: 42:     ADCON1 = 0x0D;
+"41
+[; ;setting_hardaware/adc.c: 41:     ADCON1 = 0x0D;
 [e = _ADCON1 -> -> 13 `i `uc ]
-"43
-[; ;setting_hardaware/adc.c: 43:     ADCON2=0x94;
+"42
+[; ;setting_hardaware/adc.c: 42:     ADCON2=0x94;
 [e = _ADCON2 -> -> 148 `i `uc ]
-"44
-[; ;setting_hardaware/adc.c: 44:     ADRES=0;
+"43
+[; ;setting_hardaware/adc.c: 43:     ADRES=0;
 [e = _ADRES -> -> 0 `i `us ]
 "45
 [; ;setting_hardaware/adc.c: 45: }
@@ -682,11 +682,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 62:     values[0]=lpg;
 [e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _lpg ]
 "63
-[; ;setting_hardaware/adc.c: 63:     values[0]=co;
-[e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _co ]
+[; ;setting_hardaware/adc.c: 63:     values[1]=co;
+[e = *U + _values * -> -> 1 `i `x -> -> # *U _values `i `x _co ]
 "64
-[; ;setting_hardaware/adc.c: 64:     values[0]=smoke;
-[e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _smoke ]
+[; ;setting_hardaware/adc.c: 64:     values[2]=smoke;
+[e = *U + _values * -> -> 2 `i `x -> -> # *U _values `i `x _smoke ]
 "65
 [; ;setting_hardaware/adc.c: 65: }
 [e :UE 289 ]
@@ -731,16 +731,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 78:     digital = ADRES;
 [e = _digital -> _ADRES `i ]
 "80
-[; ;setting_hardaware/adc.c: 80:         result=digital*4.88/10;
-[e = _result / * -> _digital `d .4.88 -> -> 10 `i `d ]
-"82
-[; ;setting_hardaware/adc.c: 82:     ADCON0bits.ADON = 0;
+[; ;setting_hardaware/adc.c: 80:     result=digital*5.0/1024.0*100.0;
+[e = _result * / * -> _digital `d .5.0 .1024.0 .100.0 ]
+"81
+[; ;setting_hardaware/adc.c: 81:     ADCON0bits.ADON = 0;
 [e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-"83
-[; ;setting_hardaware/adc.c: 83:     return result;
+"82
+[; ;setting_hardaware/adc.c: 82:     return result;
 [e ) _result ]
 [e $UE 293  ]
-"84
-[; ;setting_hardaware/adc.c: 84: }
+"83
+[; ;setting_hardaware/adc.c: 83: }
 [e :UE 293 ]
 }

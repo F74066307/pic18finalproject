@@ -4529,6 +4529,7 @@ void Data(int Value);
 void Cmd(int Value);
 void Send2Lcd(const char Adr, const char *Lcd);
 void LCD_init(void);
+void LCD_clear(void);
 # 11 "setting_hardaware/LCD.c" 2
 
 
@@ -4540,11 +4541,11 @@ void Cmd(int Value)
  LATCbits.LC4=0;
 
  LATCbits.LC6=0;
- _delay((unsigned long)((5)*(250000/4000.0)));
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
  LATCbits.LC6=1;
- __nop();
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
  LATCbits.LC6=0;
- _delay((unsigned long)((5)*(250000/4000.0)));
+ _delay((unsigned long)((3)*(4000000/4000.0)));
 }
 
 void Data(int Value)
@@ -4553,11 +4554,11 @@ void Data(int Value)
  LATCbits.LC4=1;
 
  LATCbits.LC6=0;
- _delay((unsigned long)((5)*(250000/4000.0)));
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
  LATCbits.LC6=1;
- __nop();
+ _delay((unsigned long)((25)*(4000000/4000000.0)));
  LATCbits.LC6=0;
- _delay((unsigned long)((5)*(250000/4000.0)));
+ _delay((unsigned long)((3)*(4000000/4000.0)));
 }
 
 void Send2Lcd(const char Adr, const char *Lcd)
@@ -4570,16 +4571,20 @@ void Send2Lcd(const char Adr, const char *Lcd)
  }
 }
 
+void LCD_clear(){
+    Cmd(0X01);
+}
+
 void LCD_init(){
 
-    _delay((unsigned long)((15)*(250000/4000.0)));
+    _delay((unsigned long)((15)*(4000000/4000.0)));
     Cmd(0X38);
-    _delay((unsigned long)((125)*(250000/4000000.0)));
+    _delay((unsigned long)((125)*(4000000/4000000.0)));
 
     Cmd(0X01);
     Cmd(0X06);
     Cmd(0X0C);
-    _delay((unsigned long)((1000)*(250000/4000000.0)));
+    _delay((unsigned long)((125)*(4000000/4000000.0)));
     Send2Lcd(0x80,"monitor");
     Send2Lcd(0xc0,"start");
 }

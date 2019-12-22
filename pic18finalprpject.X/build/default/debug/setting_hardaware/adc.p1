@@ -1,4 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F2866 `(f ~T0 @X0 1 tf2`f`f ]
+"319 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h: 319: __attribute__((nonreentrant)) float powf(float, float);
+[v _powf `JF2866 ~T0 @X0 0 e ]
+"246
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h: 246: float logf(float);
+[v _logf `(f ~T0 @X0 0 ef1`f ]
 "4690 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4690: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
@@ -8,11 +15,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4894
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4894: extern volatile unsigned short ADRES __attribute__((address(0xFC3)));
 [v _ADRES `Vus ~T0 @X0 0 e@4035 ]
-[v F2866 `(f ~T0 @X0 1 tf2`f`f ]
-"319 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\math.h: 319: __attribute__((nonreentrant)) float powf(float, float);
-[v _powf `JF2866 ~T0 @X0 0 e ]
-"4781 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+"4781
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 4781:     struct {
 [s S189 :1 `uc 1 :1 `uc 1 ]
 [n S189 . . GO_NOT_DONE ]
@@ -465,139 +468,276 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"16 setting_hardaware/adc.c
-[; ;setting_hardaware/adc.c: 16: double mq135_ro = 2000.0;
-[v _mq135_ro `d ~T0 @X0 1 e ]
-[i _mq135_ro
-.2000.0
+"8 setting_hardaware/adc.c
+[; ;setting_hardaware/adc.c: 8: double LPGCurve[3] = {2.3,0.21,-0.47};
+[v _LPGCurve `d ~T0 @X0 -> 3 `i e ]
+[i _LPGCurve
+:U ..
+.2.3
+.0.21
+-U .0.47
+..
+]
+"9
+[; ;setting_hardaware/adc.c: 9: double COCurve[3] = {2.3,0.72,-0.34};
+[v _COCurve `d ~T0 @X0 -> 3 `i e ]
+[i _COCurve
+:U ..
+.2.3
+.0.72
+-U .0.34
+..
+]
+"10
+[; ;setting_hardaware/adc.c: 10: double SmokeCurve[3] = {2.3,0.53,-0.44};
+[v _SmokeCurve `d ~T0 @X0 -> 3 `i e ]
+[i _SmokeCurve
+:U ..
+.2.3
+.0.53
+-U .0.44
+..
+]
+"11
+[; ;setting_hardaware/adc.c: 11: double Ro = 10.0;
+[v _Ro `d ~T0 @X0 1 e ]
+[i _Ro
+.10.0
+]
+"12
+[; ;setting_hardaware/adc.c: 12: int RL_VALUE = 1;
+[v _RL_VALUE `i ~T0 @X0 1 e ]
+[i _RL_VALUE
+-> 1 `i
+]
+"14
+[; ;setting_hardaware/adc.c: 14: int GAS_LPG = 0;
+[v _GAS_LPG `i ~T0 @X0 1 e ]
+[i _GAS_LPG
+-> 0 `i
+]
+"15
+[; ;setting_hardaware/adc.c: 15: int GAS_CO = 1;
+[v _GAS_CO `i ~T0 @X0 1 e ]
+[i _GAS_CO
+-> 1 `i
+]
+"16
+[; ;setting_hardaware/adc.c: 16: int GAS_SMOKE = 2;
+[v _GAS_SMOKE `i ~T0 @X0 1 e ]
+[i _GAS_SMOKE
+-> 2 `i
 ]
 "18
-[; ;setting_hardaware/adc.c: 18: void ADC_Initialize(void) {
+[; ;setting_hardaware/adc.c: 18: double lpg = 0;
+[v _lpg `d ~T0 @X0 1 e ]
+[i _lpg
+-> -> 0 `i `d
+]
+"19
+[; ;setting_hardaware/adc.c: 19: double co = 0;
+[v _co `d ~T0 @X0 1 e ]
+[i _co
+-> -> 0 `i `d
+]
+"20
+[; ;setting_hardaware/adc.c: 20: double smoke = 0;
+[v _smoke `d ~T0 @X0 1 e ]
+[i _smoke
+-> -> 0 `i `d
+]
+"24
+[; ;setting_hardaware/adc.c: 24: int MQGetPercentage(double rs_ro_ratio, double *pcurve) {
+[v _MQGetPercentage `(i ~T0 @X0 1 ef2`d`*d ]
+{
+[e :U _MQGetPercentage ]
+[v _rs_ro_ratio `d ~T0 @X0 1 r1 ]
+[v _pcurve `*d ~T0 @X0 1 r2 ]
+[f ]
+"25
+[; ;setting_hardaware/adc.c: 25:   return (powf(10,(((logf(rs_ro_ratio)-pcurve[1])/pcurve[2]) + pcurve[0])));
+[e ) -> ( _powf (2 , -> -> 10 `i `f -> + / - -> ( _logf (1 -> _rs_ro_ratio `f `d *U + _pcurve * -> -> 1 `i `x -> -> # *U _pcurve `i `x *U + _pcurve * -> -> 2 `i `x -> -> # *U _pcurve `i `x *U + _pcurve * -> -> 0 `i `x -> -> # *U _pcurve `i `x `f `i ]
+[e $UE 281  ]
+"26
+[; ;setting_hardaware/adc.c: 26: }
+[e :UE 281 ]
+}
+"28
+[; ;setting_hardaware/adc.c: 28: double MQGetGasPercentage(double rs_ro_ratio, int gas_id) {
+[v _MQGetGasPercentage `(d ~T0 @X0 1 ef2`d`i ]
+{
+[e :U _MQGetGasPercentage ]
+[v _rs_ro_ratio `d ~T0 @X0 1 r1 ]
+[v _gas_id `i ~T0 @X0 1 r2 ]
+[f ]
+"29
+[; ;setting_hardaware/adc.c: 29:   if ( gas_id == GAS_LPG ) {
+[e $ ! == _gas_id _GAS_LPG 283  ]
+{
+"30
+[; ;setting_hardaware/adc.c: 30:      return MQGetPercentage(rs_ro_ratio,LPGCurve);
+[e ) -> ( _MQGetPercentage (2 , _rs_ro_ratio &U _LPGCurve `d ]
+[e $UE 282  ]
+"31
+[; ;setting_hardaware/adc.c: 31:   } else if ( gas_id == GAS_CO ) {
+}
+[e $U 284  ]
+[e :U 283 ]
+[e $ ! == _gas_id _GAS_CO 285  ]
+{
+"32
+[; ;setting_hardaware/adc.c: 32:      return MQGetPercentage(rs_ro_ratio,COCurve);
+[e ) -> ( _MQGetPercentage (2 , _rs_ro_ratio &U _COCurve `d ]
+[e $UE 282  ]
+"33
+[; ;setting_hardaware/adc.c: 33:   } else if ( gas_id == GAS_SMOKE ) {
+}
+[e $U 286  ]
+[e :U 285 ]
+[e $ ! == _gas_id _GAS_SMOKE 287  ]
+{
+"34
+[; ;setting_hardaware/adc.c: 34:      return MQGetPercentage(rs_ro_ratio,SmokeCurve);
+[e ) -> ( _MQGetPercentage (2 , _rs_ro_ratio &U _SmokeCurve `d ]
+[e $UE 282  ]
+"35
+[; ;setting_hardaware/adc.c: 35:   }
+}
+[e :U 287 ]
+[e :U 286 ]
+[e :U 284 ]
+"36
+[; ;setting_hardaware/adc.c: 36:   return 0;
+[e ) -> -> 0 `i `d ]
+[e $UE 282  ]
+"37
+[; ;setting_hardaware/adc.c: 37: }
+[e :UE 282 ]
+}
+"39
+[; ;setting_hardaware/adc.c: 39: void ADC_Initialize(void) {
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_Initialize ]
 [f ]
-"21
-[; ;setting_hardaware/adc.c: 21:     ADCON1 = 0x0D;
+"41
+[; ;setting_hardaware/adc.c: 41:     ADCON1 = 0x0D;
 [e = _ADCON1 -> -> 13 `i `uc ]
-"22
-[; ;setting_hardaware/adc.c: 22:     ADCON2=0x94;
+"42
+[; ;setting_hardaware/adc.c: 42:     ADCON2=0x94;
 [e = _ADCON2 -> -> 148 `i `uc ]
-"23
-[; ;setting_hardaware/adc.c: 23:     ADRES=0;
+"43
+[; ;setting_hardaware/adc.c: 43:     ADRES=0;
 [e = _ADRES -> -> 0 `i `us ]
-"24
-[; ;setting_hardaware/adc.c: 24: }
-[e :UE 281 ]
+"45
+[; ;setting_hardaware/adc.c: 45: }
+[e :UE 288 ]
 }
-"26
-[; ;setting_hardaware/adc.c: 26: double mq135_getppm(long resvalue, long ro) {
-[v _mq135_getppm `(d ~T0 @X0 1 ef2`l`l ]
+"47
+[; ;setting_hardaware/adc.c: 47: void MQ_Read(double* values){
+[v _MQ_Read `(v ~T0 @X0 1 ef1`*d ]
 {
-[e :U _mq135_getppm ]
-[v _resvalue `l ~T0 @X0 1 r1 ]
-[v _ro `l ~T0 @X0 1 r2 ]
+[e :U _MQ_Read ]
+[v _values `*d ~T0 @X0 1 r1 ]
 [f ]
-"27
-[; ;setting_hardaware/adc.c: 27:   double ret = 0;
-[v _ret `d ~T0 @X0 1 a ]
-[e = _ret -> -> 0 `i `d ]
-"28
-[; ;setting_hardaware/adc.c: 28:   double validinterval = resvalue / (double)ro;
-[v _validinterval `d ~T0 @X0 1 a ]
-[e = _validinterval / -> _resvalue `d -> _ro `d ]
-"29
-[; ;setting_hardaware/adc.c: 29:   if (validinterval < 2.428 && validinterval > 0.358) {
-[e $ ! && < _validinterval .2.428 > _validinterval .0.358 283  ]
-{
-"30
-[; ;setting_hardaware/adc.c: 30:     ret = (double)116.6020682 * powf(((double)resvalue / ro),-2.769034857);
-[e = _ret * .116.6020682 -> ( _powf (2 , -> / -> _resvalue `d -> _ro `d `f -> -U .2.769034857 `f `d ]
-"31
-[; ;setting_hardaware/adc.c: 31:   }
+"48
+[; ;setting_hardaware/adc.c: 48:     int digital;
+[v _digital `i ~T0 @X0 1 a ]
+"51
+[; ;setting_hardaware/adc.c: 51:     ADCON0bits.CHS = 1 ;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"52
+[; ;setting_hardaware/adc.c: 52:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+"53
+[; ;setting_hardaware/adc.c: 53:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"54
+[; ;setting_hardaware/adc.c: 54:     while(ADCON0bits.GO_nDONE==1);
+[e $U 290  ]
+[e :U 291 ]
+[e :U 290 ]
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 291  ]
+[e :U 292 ]
+"55
+[; ;setting_hardaware/adc.c: 55:     digital = ADRES;
+[e = _digital -> _ADRES `i ]
+"56
+[; ;setting_hardaware/adc.c: 56:     double res=5.00*(1023-digital)/1023;
+[v _res `d ~T0 @X0 1 a ]
+[e = _res / * .5.00 -> - -> 1023 `i _digital `d -> -> 1023 `i `d ]
+"57
+[; ;setting_hardaware/adc.c: 57:     lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
+[e = _lpg ( _MQGetGasPercentage (2 , / _res _Ro _GAS_LPG ]
+"58
+[; ;setting_hardaware/adc.c: 58:     co = MQGetGasPercentage(res/Ro,GAS_CO);
+[e = _co ( _MQGetGasPercentage (2 , / _res _Ro _GAS_CO ]
+"59
+[; ;setting_hardaware/adc.c: 59:     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
+[e = _smoke ( _MQGetGasPercentage (2 , / _res _Ro _GAS_SMOKE ]
+"60
+[; ;setting_hardaware/adc.c: 60:     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"62
+[; ;setting_hardaware/adc.c: 62:     values[0]=lpg;
+[e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _lpg ]
+"63
+[; ;setting_hardaware/adc.c: 63:     values[1]=co;
+[e = *U + _values * -> -> 1 `i `x -> -> # *U _values `i `x _co ]
+"64
+[; ;setting_hardaware/adc.c: 64:     values[2]=smoke;
+[e = *U + _values * -> -> 2 `i `x -> -> # *U _values `i `x _smoke ]
+"65
+[; ;setting_hardaware/adc.c: 65: }
+[e :UE 289 ]
 }
-[e :U 283 ]
-"32
-[; ;setting_hardaware/adc.c: 32:   return ret;
-[e ) _ret ]
-[e $UE 282  ]
-"33
-[; ;setting_hardaware/adc.c: 33: }
-[e :UE 282 ]
-}
-"35
-[; ;setting_hardaware/adc.c: 35: double ADC_Read(int channel)
+"67
+[; ;setting_hardaware/adc.c: 67: double ADC_Read(int channel)
 [v _ADC_Read `(d ~T0 @X0 1 ef1`i ]
-"36
-[; ;setting_hardaware/adc.c: 36: {
+"68
+[; ;setting_hardaware/adc.c: 68: {
 {
 [e :U _ADC_Read ]
-"35
-[; ;setting_hardaware/adc.c: 35: double ADC_Read(int channel)
+"67
+[; ;setting_hardaware/adc.c: 67: double ADC_Read(int channel)
 [v _channel `i ~T0 @X0 1 r1 ]
-"36
-[; ;setting_hardaware/adc.c: 36: {
+"68
+[; ;setting_hardaware/adc.c: 68: {
 [f ]
-"38
-[; ;setting_hardaware/adc.c: 38:     int digital;
+"70
+[; ;setting_hardaware/adc.c: 70:     int digital;
 [v _digital `i ~T0 @X0 1 a ]
-"39
-[; ;setting_hardaware/adc.c: 39:     double result=0;
+"71
+[; ;setting_hardaware/adc.c: 71:     double result=0;
 [v _result `d ~T0 @X0 1 a ]
 [e = _result -> -> 0 `i `d ]
-"41
-[; ;setting_hardaware/adc.c: 41:     ADCON0bits.CHS = channel ;
+"73
+[; ;setting_hardaware/adc.c: 73:     ADCON0bits.CHS = channel ;
 [e = . . _ADCON0bits 1 2 -> _channel `uc ]
-"42
-[; ;setting_hardaware/adc.c: 42:     ADCON0bits.ADON = 1;
+"74
+[; ;setting_hardaware/adc.c: 74:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-"43
-[; ;setting_hardaware/adc.c: 43:     ADCON0bits.GO = 1;
+"75
+[; ;setting_hardaware/adc.c: 75:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-"44
-[; ;setting_hardaware/adc.c: 44:     while(ADCON0bits.GO_nDONE==1);
-[e $U 285  ]
-[e :U 286 ]
-[e :U 285 ]
-[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 286  ]
-[e :U 287 ]
-"46
-[; ;setting_hardaware/adc.c: 46:     digital = ADRES;
+"76
+[; ;setting_hardaware/adc.c: 76:     while(ADCON0bits.GO_nDONE==1);
+[e $U 294  ]
+[e :U 295 ]
+[e :U 294 ]
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 295  ]
+[e :U 296 ]
+"78
+[; ;setting_hardaware/adc.c: 78:     digital = ADRES;
 [e = _digital -> _ADRES `i ]
-"47
-[; ;setting_hardaware/adc.c: 47:     if(channel==1){
-[e $ ! == _channel -> 1 `i 288  ]
-{
-"49
-[; ;setting_hardaware/adc.c: 49:         int val = (2000.0 * (1023 - digital) / digital);
-[v _val `i ~T0 @X0 1 a ]
-[e = _val -> / * .2000.0 -> - -> 1023 `i _digital `d -> _digital `d `i ]
-"50
-[; ;setting_hardaware/adc.c: 50:         result=mq135_getppm(val, 68550);
-[e = _result ( _mq135_getppm (2 , -> _val `l -> 68550 `l ]
-"51
-[; ;setting_hardaware/adc.c: 51:     }
-}
-[e $U 289  ]
-"52
-[; ;setting_hardaware/adc.c: 52:     else{
-[e :U 288 ]
-{
-"54
-[; ;setting_hardaware/adc.c: 54:         result=digital*4.88/10;
-[e = _result / * -> _digital `d .4.88 -> -> 10 `i `d ]
-"55
-[; ;setting_hardaware/adc.c: 55:     }
-}
-[e :U 289 ]
-"56
-[; ;setting_hardaware/adc.c: 56:     ADCON0bits.ADON = 0;
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-"57
-[; ;setting_hardaware/adc.c: 57:     return result;
+"80
+[; ;setting_hardaware/adc.c: 80:     result=digital*5.0/1024.0*100.0;
+[e = _result * / * -> _digital `d .5.0 .1024.0 .100.0 ]
+"82
+[; ;setting_hardaware/adc.c: 82:     return result;
 [e ) _result ]
-[e $UE 284  ]
-"58
-[; ;setting_hardaware/adc.c: 58: }
-[e :UE 284 ]
+[e $UE 293  ]
+"83
+[; ;setting_hardaware/adc.c: 83: }
+[e :UE 293 ]
 }

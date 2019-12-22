@@ -1,4 +1,4 @@
-# 1 "setting_hardaware/interrupt_manager.c"
+# 1 "setting_hardaware/buzzer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "setting_hardaware/interrupt_manager.c" 2
+# 1 "setting_hardaware/buzzer.c" 2
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4512,19 +4520,23 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "setting_hardaware/interrupt_manager.c" 2
+# 9 "setting_hardaware/buzzer.c" 2
 
 
-# 1 "setting_hardaware/interrupt_manager.h" 1
+# 1 "setting_hardaware/buzzer.h" 1
 
 
-void INTERRUPT_Initialize(void);
-# 3 "setting_hardaware/interrupt_manager.c" 2
+void speak(int ms);
+void buzzer_init(void);
+# 11 "setting_hardaware/buzzer.c" 2
 
 
-void INTERRUPT_Initialize (void)
-{
-    RCONbits.IPEN = 1;
-    INTCONbits.GIE = 1;
+void speak(int ms){
+    LATBbits.LATB0=1;
+    _delay((unsigned long)((40)*(4000000/4000.0)));
+    LATBbits.LATB0=0;
+}
+
+void buzzer_init(){
 
 }

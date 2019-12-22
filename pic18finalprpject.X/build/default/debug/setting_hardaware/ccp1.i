@@ -4514,6 +4514,15 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 1 "setting_hardaware/ccp1.c" 2
 
+# 1 "setting_hardaware/ccp1.h" 1
+
+
+
+
+
+void CCP1_Initialize();
+# 2 "setting_hardaware/ccp1.c" 2
+
 
 void CCP1_Initialize() {
 

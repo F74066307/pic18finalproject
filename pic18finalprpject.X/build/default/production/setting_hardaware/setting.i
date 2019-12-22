@@ -4664,6 +4664,7 @@ void TMR1_Initialize(){
 
 void SYSTEM_Initialize(void)
 {
+    INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     LCD_init();
