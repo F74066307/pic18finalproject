@@ -52,12 +52,14 @@ void __interrupt(high_priority) Hi_ISR(void)
             
             //see whether out of limit and bep buzzer
             
-             if(value[0]>500||value[1]>500||value[2]>500||T_Integral>40||RH_Integral>80){
-              speak();
-              __delay_ms(40);
-              speak();
-              cycle=2;
-              }
+             if(value[0]>=500||value[1]>=500||value[2]>=500||T_Integral>=40||RH_Integral>=80){
+                speak();
+                speak();
+                cycle=2;
+             }
+             else{
+                 cycle=4;
+             }
              
             
             //change cycle if in need

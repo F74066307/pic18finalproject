@@ -5037,8 +5037,17 @@ void MQ_Read(double* values){
     digital = ADRES;
     double res=5.00*(1023-digital)/(double)digital;
     lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
+    if(lpg>=10000){
+        lpg=10000;
+    }
     co = MQGetGasPercentage(res/Ro,GAS_CO);
+    if(co>=10000){
+        co=10000;
+    }
     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
+    if(smoke>=10000){
+        smoke=10000;
+    }
 
 
     values[0]=lpg;

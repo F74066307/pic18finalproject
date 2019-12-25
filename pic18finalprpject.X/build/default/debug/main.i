@@ -4843,7 +4843,21 @@ void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
             memset(r,'\0',sizeof(r));
             sprintf(r,"%d %d %d",(int)value[0],(int)value[1],(int)value[2]);
             Send2Lcd(0xc0,r);
-# 64 "main.c"
+
+
+
+             if(value[0]>500||value[1]>500||value[2]>500||T_Integral>40||RH_Integral>80){
+                speak();
+                speak();
+                cycle=2;
+              }
+             else{
+                 cycle=4;
+             }
+
+
+
+
         }
         PIR1bits.TMR1IF=0;
         TMR1=timer_val;

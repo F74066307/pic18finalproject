@@ -670,21 +670,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 57:     lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
 [e = _lpg ( _MQGetGasPercentage (2 , / _res _Ro _GAS_LPG ]
 "58
-[; ;setting_hardaware/adc.c: 58:     co = MQGetGasPercentage(res/Ro,GAS_CO);
-[e = _co ( _MQGetGasPercentage (2 , / _res _Ro _GAS_CO ]
+[; ;setting_hardaware/adc.c: 58:     if(lpg>=10000){
+[e $ ! >= _lpg -> -> 10000 `i `d 293  ]
+{
 "59
-[; ;setting_hardaware/adc.c: 59:     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
-[e = _smoke ( _MQGetGasPercentage (2 , / _res _Ro _GAS_SMOKE ]
+[; ;setting_hardaware/adc.c: 59:         lpg=10000;
+[e = _lpg -> -> 10000 `i `d ]
+"60
+[; ;setting_hardaware/adc.c: 60:     }
+}
+[e :U 293 ]
+"61
+[; ;setting_hardaware/adc.c: 61:     co = MQGetGasPercentage(res/Ro,GAS_CO);
+[e = _co ( _MQGetGasPercentage (2 , / _res _Ro _GAS_CO ]
 "62
-[; ;setting_hardaware/adc.c: 62:     values[0]=lpg;
-[e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _lpg ]
+[; ;setting_hardaware/adc.c: 62:     if(co>=10000){
+[e $ ! >= _co -> -> 10000 `i `d 294  ]
+{
 "63
-[; ;setting_hardaware/adc.c: 63:     values[1]=co;
-[e = *U + _values * -> -> 1 `i `x -> -> # *U _values `i `x _co ]
+[; ;setting_hardaware/adc.c: 63:         co=10000;
+[e = _co -> -> 10000 `i `d ]
 "64
-[; ;setting_hardaware/adc.c: 64:     values[2]=smoke;
-[e = *U + _values * -> -> 2 `i `x -> -> # *U _values `i `x _smoke ]
+[; ;setting_hardaware/adc.c: 64:     }
+}
+[e :U 294 ]
 "65
-[; ;setting_hardaware/adc.c: 65: }
+[; ;setting_hardaware/adc.c: 65:     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
+[e = _smoke ( _MQGetGasPercentage (2 , / _res _Ro _GAS_SMOKE ]
+"66
+[; ;setting_hardaware/adc.c: 66:     if(smoke>=10000){
+[e $ ! >= _smoke -> -> 10000 `i `d 295  ]
+{
+"67
+[; ;setting_hardaware/adc.c: 67:         smoke=10000;
+[e = _smoke -> -> 10000 `i `d ]
+"68
+[; ;setting_hardaware/adc.c: 68:     }
+}
+[e :U 295 ]
+"71
+[; ;setting_hardaware/adc.c: 71:     values[0]=lpg;
+[e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _lpg ]
+"72
+[; ;setting_hardaware/adc.c: 72:     values[1]=co;
+[e = *U + _values * -> -> 1 `i `x -> -> # *U _values `i `x _co ]
+"73
+[; ;setting_hardaware/adc.c: 73:     values[2]=smoke;
+[e = *U + _values * -> -> 2 `i `x -> -> # *U _values `i `x _smoke ]
+"74
+[; ;setting_hardaware/adc.c: 74: }
 [e :UE 289 ]
 }
