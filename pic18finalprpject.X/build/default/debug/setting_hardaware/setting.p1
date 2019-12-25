@@ -76,18 +76,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6 setting_hardaware/pin_manager.h
 [; ;setting_hardaware/pin_manager.h: 6: void PIN_MANAGER_Initialize(void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"19 setting_hardaware/setting.h
-[; ;setting_hardaware/setting.h: 19: void OSCILLATOR_Initialize(void);
+"20 setting_hardaware/setting.h
+[; ;setting_hardaware/setting.h: 20: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"15 setting_hardaware/LCD.h
-[; ;setting_hardaware/LCD.h: 15: void LCD_init(void);
-[v _LCD_init `(v ~T0 @X0 0 ef ]
 "4 setting_hardaware/buzzer.h
 [; ;setting_hardaware/buzzer.h: 4: void buzzer_init(void);
 [v _buzzer_init `(v ~T0 @X0 0 ef ]
-"36 setting_hardaware/adc.h
-[; ;setting_hardaware/adc.h: 36: void ADC_Initialize(void);
+"35 setting_hardaware/adc.h
+[; ;setting_hardaware/adc.h: 35: void ADC_Initialize(void);
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"15 setting_hardaware/LCD.h
+[; ;setting_hardaware/LCD.h: 15: void LCD_init(void);
+[v _LCD_init `(v ~T0 @X0 0 ef ]
 "7555 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7555: extern volatile __bit IRCF2 __attribute__((address(0x7E9E)));
 [v _IRCF2 `Vb ~T0 @X0 0 e@32414 ]
@@ -578,8 +578,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"20 setting_hardaware/setting.h
-[; ;setting_hardaware/setting.h: 20: int timer_val;
+"21 setting_hardaware/setting.h
+[; ;setting_hardaware/setting.h: 21: int timer_val;
 [v _timer_val `i ~T0 @X0 1 e ]
 "60 setting_hardaware/setting.c
 [; ;setting_hardaware/setting.c: 60: int timer_val=65535-(1000000/4)/4;
@@ -636,14 +636,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/setting.c: 77:     OSCILLATOR_Initialize();
 [e ( _OSCILLATOR_Initialize ..  ]
 "78
-[; ;setting_hardaware/setting.c: 78:     LCD_init();
-[e ( _LCD_init ..  ]
-"79
-[; ;setting_hardaware/setting.c: 79:     buzzer_init();
+[; ;setting_hardaware/setting.c: 78:     buzzer_init();
 [e ( _buzzer_init ..  ]
-"80
-[; ;setting_hardaware/setting.c: 80:     ADC_Initialize();
+"79
+[; ;setting_hardaware/setting.c: 79:     ADC_Initialize();
 [e ( _ADC_Initialize ..  ]
+"80
+[; ;setting_hardaware/setting.c: 80:     LCD_init();
+[e ( _LCD_init ..  ]
 "81
 [; ;setting_hardaware/setting.c: 81:     TMR1_Initialize();
 [e ( _TMR1_Initialize ..  ]

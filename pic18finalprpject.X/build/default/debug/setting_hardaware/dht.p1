@@ -1,66 +1,81 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"19 ./setting_hardaware/setting.h
-[; ;./setting_hardaware/setting.h: 19: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-[t ~ __interrupt . k ]
-[t T41 __interrupt high_priority ]
-"2677 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2677:     struct {
-[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S96 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-"2687
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2687:     struct {
-[s S97 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S97 . . TX1IF RC1IF ]
-"2676
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2676: typedef union {
-[u S95 `S96 1 `S97 1 ]
-[n S95 . . . ]
-"2693
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2693: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS95 ~T0 @X0 0 e@3998 ]
-"2600
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2600:     struct {
-[s S93 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S93 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
-"2610
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2610:     struct {
-[s S94 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S94 . . TX1IE RC1IE ]
-"2599
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2599: typedef union {
-[u S92 `S93 1 `S94 1 ]
-[n S92 . . . ]
-"2616
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 2616: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
-[v _PIE1bits `VS92 ~T0 @X0 0 e@3997 ]
-"29 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
-[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
-"4 ./setting_hardaware/dht.h
-[; ;./setting_hardaware/dht.h: 4: void DHT11_Start();
-[v _DHT11_Start `(v ~T0 @X0 0 e? ]
-"5
-[; ;./setting_hardaware/dht.h: 5: void DHT11_CheckResponse();
-[v _DHT11_CheckResponse `(v ~T0 @X0 0 e? ]
-"6
-[; ;./setting_hardaware/dht.h: 6: char DHT11_ReadData();
-[v _DHT11_ReadData `(uc ~T0 @X0 0 e? ]
-"113 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"16 ./setting_hardaware/LCD.h
-[; ;./setting_hardaware/LCD.h: 16: void LCD_clear(void);
-[v _LCD_clear `(v ~T0 @X0 0 ef ]
-"14
-[; ;./setting_hardaware/LCD.h: 14: void Send2Lcd(const char Adr, const char *Lcd);
-[v _Send2Lcd `(v ~T0 @X0 0 ef2`Cuc`*Cuc ]
-"34 ./setting_hardaware/adc.h
-[; ;./setting_hardaware/adc.h: 34: void MQ_Read(double* values);
-[v _MQ_Read `(v ~T0 @X0 0 ef1`*d ]
-"5633 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
-[v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
+"58 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 58:     struct {
+[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 68:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . AN0 AN1 AN2 AN3 T0CKI AN4 OSC2 OSC1 ]
+"78
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 78:     struct {
+[s S9 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S9 . . VREFN VREFP . SS CLKO CLKI ]
+"87
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 87:     struct {
+[s S10 :5 `uc 1 :1 `uc 1 ]
+[n S10 . . NOT_SS ]
+"91
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 91:     struct {
+[s S11 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S11 . . CVREF . nSS ]
+"97
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 97:     struct {
+[s S12 :5 `uc 1 :1 `uc 1 ]
+[n S12 . . LVDIN ]
+"101
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 101:     struct {
+[s S13 :5 `uc 1 :1 `uc 1 ]
+[n S13 . . HLVDIN ]
+"105
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 105:     struct {
+[s S14 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . . C1OUT C2OUT ]
+"110
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 110:     struct {
+[s S15 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
+[n S15 . ULPWUIN . RJPU ]
+"57
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 57: typedef union {
+[u S6 `S7 1 `S8 1 `S9 1 `S10 1 `S11 1 `S12 1 `S13 1 `S14 1 `S15 1 ]
+[n S6 . . . . . . . . . . ]
+"116
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 116: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
+[v _PORTAbits `VS6 ~T0 @X0 0 e@3968 ]
+"1488
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1488:     struct {
+[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S60 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"1498
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1498:     struct {
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"1487
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1487: typedef union {
+[u S59 `S60 1 `S61 1 ]
+[n S59 . . . ]
+"1509
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1509: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
+[v _TRISAbits `VS59 ~T0 @X0 0 e@3986 ]
+"983
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 983:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"993
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 993:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
+"982
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 982: typedef union {
+[u S44 `S45 1 `S46 1 ]
+[n S44 . . . ]
+"1004
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1004: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
+[v _LATAbits `VS44 ~T0 @X0 0 e@3977 ]
+[v F2518 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF2518 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -475,158 +490,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"21 ./setting_hardaware/setting.h
-[; ;./setting_hardaware/setting.h: 21: int timer_val;
-[v _timer_val `i ~T0 @X0 1 e ]
-"8 main.c
-[; ;main.c: 8: char r[100];
-[v _r `uc ~T0 @X0 -> 100 `i e ]
-"9
-[; ;main.c: 9: int count=0;
-[v _count `i ~T0 @X0 1 e ]
-[i _count
--> 0 `i
-]
-"10
-[; ;main.c: 10: int cycle=4;
-[v _cycle `i ~T0 @X0 1 e ]
-[i _cycle
--> 4 `i
-]
-"11
-[; ;main.c: 11: double value[3];
-[v _value `d ~T0 @X0 -> 3 `i e ]
-"12
-[; ;main.c: 12: char RH_Decimal,RH_Integral,T_Decimal,T_Integral;
-[v _RH_Decimal `uc ~T0 @X0 1 e ]
-[v _RH_Integral `uc ~T0 @X0 1 e ]
-[v _T_Decimal `uc ~T0 @X0 1 e ]
-[v _T_Integral `uc ~T0 @X0 1 e ]
+"12 setting_hardaware/dht.c
+[; ;setting_hardaware/dht.c: 12: void DHT11_CheckResponse()
+[v _DHT11_CheckResponse `(v ~T0 @X0 1 ef ]
 "13
-[; ;main.c: 13: char Checksum;
-[v _Checksum `uc ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"15
-[; ;main.c: 15: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"16
-[; ;main.c: 16: {
+[; ;setting_hardaware/dht.c: 13: {
 {
-[e :U _main ]
+[e :U _DHT11_CheckResponse ]
 [f ]
-"17
-[; ;main.c: 17:     SYSTEM_Initialize() ;
-[e ( _SYSTEM_Initialize ..  ]
-"18
-[; ;main.c: 18:     while(1);
+"14
+[; ;setting_hardaware/dht.c: 14:     while(PORTAbits.RA2 & 1);
+[e $U 282  ]
+[e :U 283 ]
+[e :U 282 ]
+[e $ != & -> . . _PORTAbits 0 2 `i -> 1 `i -> 0 `i 283  ]
+[e :U 284 ]
+"15
+[; ;setting_hardaware/dht.c: 15:     while(!(PORTAbits.RA2 & 1));
+[e $U 285  ]
 [e :U 286 ]
 [e :U 285 ]
-[e $U 286  ]
+[e $ ! != & -> . . _PORTAbits 0 2 `i -> 1 `i -> 0 `i 286  ]
 [e :U 287 ]
-"19
-[; ;main.c: 19:     return;
-[e $UE 284  ]
-"21
-[; ;main.c: 21: }
-[e :UE 284 ]
-}
-[v $root$_Hi_ISR `(v ~T0 @X0 0 e ]
-"24
-[; ;main.c: 24: void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
-[v _Hi_ISR `(v ~T41 @X0 1 ef ]
-"25
-[; ;main.c: 25: {
-{
-[e :U _Hi_ISR ]
-[f ]
-"26
-[; ;main.c: 26:     if(PIR1bits.TMR1IF&&PIE1bits.TMR1IE) {
-[e $ ! && != -> . . _PIR1bits 0 0 `i -> 0 `i != -> . . _PIE1bits 0 0 `i -> 0 `i 289  ]
-{
-"27
-[; ;main.c: 27:         if(count<cycle){
-[e $ ! < _count _cycle 290  ]
-{
-"28
-[; ;main.c: 28:             count++;
-[e ++ _count -> 1 `i ]
-"29
-[; ;main.c: 29:         }
-}
-[e $U 291  ]
-"30
-[; ;main.c: 30:         else{
-[e :U 290 ]
-{
-"32
-[; ;main.c: 32:             count=0;
-[e = _count -> 0 `i ]
-"33
-[; ;main.c: 33:             memset(r,'\0',sizeof(r));
-[e ( _memset (3 , , -> &U _r `*v -> -> 0 `ui `i -> # _r `ui ]
-"35
-[; ;main.c: 35:             DHT11_Start();
-[e ( _DHT11_Start ..  ]
-"36
-[; ;main.c: 36:             DHT11_CheckResponse();
-[e ( _DHT11_CheckResponse ..  ]
-"38
-[; ;main.c: 38:             RH_Integral = DHT11_ReadData();
-[e = _RH_Integral ( _DHT11_ReadData ..  ]
-"39
-[; ;main.c: 39:             RH_Decimal = DHT11_ReadData();
-[e = _RH_Decimal ( _DHT11_ReadData ..  ]
-"40
-[; ;main.c: 40:             T_Integral = DHT11_ReadData();
-[e = _T_Integral ( _DHT11_ReadData ..  ]
-"41
-[; ;main.c: 41:             T_Decimal = DHT11_ReadData();
-[e = _T_Decimal ( _DHT11_ReadData ..  ]
-"42
-[; ;main.c: 42:             Checksum = DHT11_ReadData();
-[e = _Checksum ( _DHT11_ReadData ..  ]
-"44
-[; ;main.c: 44:             sprintf(r,"%d.%1d C  %d.%1d H",T_Integral,T_Decimal,RH_Integral,RH_Decimal);
-[e ( _sprintf (1 , , , , (. , &U _r :s 1C -> _T_Integral `i -> _T_Decimal `i -> _RH_Integral `i -> _RH_Decimal `i ]
-"45
-[; ;main.c: 45:             LCD_clear();
-[e ( _LCD_clear ..  ]
-"46
-[; ;main.c: 46:             Send2Lcd(0x80,r);
-[e ( _Send2Lcd (2 , -> -> 128 `i `uc -> &U _r `*Cuc ]
-"48
-[; ;main.c: 48:             MQ_Read(value);
-[e ( _MQ_Read (1 &U _value ]
-"49
-[; ;main.c: 49:             memset(r,'\0',sizeof(r));
-[e ( _memset (3 , , -> &U _r `*v -> -> 0 `ui `i -> # _r `ui ]
-"50
-[; ;main.c: 50:             sprintf(r,"%d %d %d",(int)value[0],(int)value[1],(int)value[2]);
-[e ( _sprintf (1 , , , (. , &U _r :s 2C -> *U + &U _value * -> -> -> 0 `i `ui `ux -> -> # *U &U _value `ui `ux `i -> *U + &U _value * -> -> -> 1 `i `ui `ux -> -> # *U &U _value `ui `ux `i -> *U + &U _value * -> -> -> 2 `i `ui `ux -> -> # *U &U _value `ui `ux `i ]
-"51
-[; ;main.c: 51:             Send2Lcd(0xc0,r);
-[e ( _Send2Lcd (2 , -> -> 192 `i `uc -> &U _r `*Cuc ]
-"64
-[; ;main.c: 64:         }
-}
-[e :U 291 ]
-"65
-[; ;main.c: 65:         PIR1bits.TMR1IF=0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"66
-[; ;main.c: 66:         TMR1=timer_val;
-[e = _TMR1 -> _timer_val `us ]
-"67
-[; ;main.c: 67:     }
-}
+"16
+[; ;setting_hardaware/dht.c: 16:     while(PORTAbits.RA2 & 1);
+[e $U 288  ]
 [e :U 289 ]
-"69
-[; ;main.c: 69:     return ;
-[e $UE 288  ]
-"70
-[; ;main.c: 70: }
-[e :UE 288 ]
+[e :U 288 ]
+[e $ != & -> . . _PORTAbits 0 2 `i -> 1 `i -> 0 `i 289  ]
+[e :U 290 ]
+"17
+[; ;setting_hardaware/dht.c: 17: }
+[e :UE 281 ]
 }
-[p f _sprintf 8421504 ]
-[a 2C 37 100 32 37 100 32 37 100 0 ]
-[a 1C 37 100 46 37 49 100 32 67 32 32 37 100 46 37 49 100 32 72 0 ]
+"19
+[; ;setting_hardaware/dht.c: 19: void DHT11_Start()
+[v _DHT11_Start `(v ~T0 @X0 1 ef ]
+"20
+[; ;setting_hardaware/dht.c: 20: {
+{
+[e :U _DHT11_Start ]
+[f ]
+"21
+[; ;setting_hardaware/dht.c: 21:     TRISAbits.RA2 = 0;
+[e = . . _TRISAbits 1 2 -> -> 0 `i `uc ]
+"22
+[; ;setting_hardaware/dht.c: 22:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"23
+[; ;setting_hardaware/dht.c: 23:     _delay((unsigned long)((18)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"24
+[; ;setting_hardaware/dht.c: 24:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"25
+[; ;setting_hardaware/dht.c: 25:     _delay((unsigned long)((20)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"26
+[; ;setting_hardaware/dht.c: 26:     TRISAbits.RA2 = 1;
+[e = . . _TRISAbits 1 2 -> -> 1 `i `uc ]
+"27
+[; ;setting_hardaware/dht.c: 27: }
+[e :UE 291 ]
+}
+"29
+[; ;setting_hardaware/dht.c: 29: char DHT11_ReadData()
+[v _DHT11_ReadData `(uc ~T0 @X0 1 ef ]
+"30
+[; ;setting_hardaware/dht.c: 30: {
+{
+[e :U _DHT11_ReadData ]
+[f ]
+"31
+[; ;setting_hardaware/dht.c: 31:   char i,data = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[v _data `uc ~T0 @X0 1 a ]
+[e = _data -> -> 0 `i `uc ]
+"32
+[; ;setting_hardaware/dht.c: 32:     for(i=0;i<8;i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 293  ]
+[e $U 294  ]
+[e :U 293 ]
+"33
+[; ;setting_hardaware/dht.c: 33:     {
+{
+"34
+[; ;setting_hardaware/dht.c: 34:         while(!(PORTAbits.RA2 & 1));
+[e $U 296  ]
+[e :U 297 ]
+[e :U 296 ]
+[e $ ! != & -> . . _PORTAbits 0 2 `i -> 1 `i -> 0 `i 297  ]
+[e :U 298 ]
+"35
+[; ;setting_hardaware/dht.c: 35:         _delay((unsigned long)((30)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"36
+[; ;setting_hardaware/dht.c: 36:         if(PORTAbits.RA2 & 1)
+[e $ ! != & -> . . _PORTAbits 0 2 `i -> 1 `i -> 0 `i 299  ]
+"37
+[; ;setting_hardaware/dht.c: 37:           data = ((data<<1) | 1);
+[e = _data -> | << -> _data `i -> 1 `i -> 1 `i `uc ]
+[e $U 300  ]
+"38
+[; ;setting_hardaware/dht.c: 38:         else
+[e :U 299 ]
+"39
+[; ;setting_hardaware/dht.c: 39:           data = (data<<1);
+[e = _data -> << -> _data `i -> 1 `i `uc ]
+[e :U 300 ]
+"40
+[; ;setting_hardaware/dht.c: 40:         while(PORTAbits.RA2 & 1);
+[e $U 301  ]
+[e :U 302 ]
+[e :U 301 ]
+[e $ != & -> . . _PORTAbits 0 2 `i -> 1 `i -> 0 `i 302  ]
+[e :U 303 ]
+"41
+[; ;setting_hardaware/dht.c: 41:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 293  ]
+[e :U 294 ]
+}
+"42
+[; ;setting_hardaware/dht.c: 42:   return data;
+[e ) _data ]
+[e $UE 292  ]
+"43
+[; ;setting_hardaware/dht.c: 43: }
+[e :UE 292 ]
+}

@@ -663,9 +663,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;setting_hardaware/adc.c: 55:     digital = ADRES;
 [e = _digital -> _ADRES `i ]
 "56
-[; ;setting_hardaware/adc.c: 56:     double res=5.00*(1023-digital)/1023;
+[; ;setting_hardaware/adc.c: 56:     double res=5.00*(1023-digital)/(double)digital;
 [v _res `d ~T0 @X0 1 a ]
-[e = _res / * .5.00 -> - -> 1023 `i _digital `d -> -> 1023 `i `d ]
+[e = _res / * .5.00 -> - -> 1023 `i _digital `d -> _digital `d ]
 "57
 [; ;setting_hardaware/adc.c: 57:     lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
 [e = _lpg ( _MQGetGasPercentage (2 , / _res _Ro _GAS_LPG ]
@@ -675,9 +675,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59
 [; ;setting_hardaware/adc.c: 59:     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
 [e = _smoke ( _MQGetGasPercentage (2 , / _res _Ro _GAS_SMOKE ]
-"60
-[; ;setting_hardaware/adc.c: 60:     ADCON0bits.ADON = 0;
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
 "62
 [; ;setting_hardaware/adc.c: 62:     values[0]=lpg;
 [e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _lpg ]
@@ -690,54 +687,4 @@ Version 4.0 HI-TECH Software Intermediate Code
 "65
 [; ;setting_hardaware/adc.c: 65: }
 [e :UE 289 ]
-}
-"67
-[; ;setting_hardaware/adc.c: 67: double ADC_Read(int channel)
-[v _ADC_Read `(d ~T0 @X0 1 ef1`i ]
-"68
-[; ;setting_hardaware/adc.c: 68: {
-{
-[e :U _ADC_Read ]
-"67
-[; ;setting_hardaware/adc.c: 67: double ADC_Read(int channel)
-[v _channel `i ~T0 @X0 1 r1 ]
-"68
-[; ;setting_hardaware/adc.c: 68: {
-[f ]
-"70
-[; ;setting_hardaware/adc.c: 70:     int digital;
-[v _digital `i ~T0 @X0 1 a ]
-"71
-[; ;setting_hardaware/adc.c: 71:     double result=0;
-[v _result `d ~T0 @X0 1 a ]
-[e = _result -> -> 0 `i `d ]
-"73
-[; ;setting_hardaware/adc.c: 73:     ADCON0bits.CHS = channel ;
-[e = . . _ADCON0bits 1 2 -> _channel `uc ]
-"74
-[; ;setting_hardaware/adc.c: 74:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-"75
-[; ;setting_hardaware/adc.c: 75:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-"76
-[; ;setting_hardaware/adc.c: 76:     while(ADCON0bits.GO_nDONE==1);
-[e $U 294  ]
-[e :U 295 ]
-[e :U 294 ]
-[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 295  ]
-[e :U 296 ]
-"78
-[; ;setting_hardaware/adc.c: 78:     digital = ADRES;
-[e = _digital -> _ADRES `i ]
-"80
-[; ;setting_hardaware/adc.c: 80:     result=digital*5.0/1024.0*100.0;
-[e = _result * / * -> _digital `d .5.0 .1024.0 .100.0 ]
-"82
-[; ;setting_hardaware/adc.c: 82:     return result;
-[e ) _result ]
-[e $UE 293  ]
-"83
-[; ;setting_hardaware/adc.c: 83: }
-[e :UE 293 ]
 }

@@ -4546,7 +4546,6 @@ void CCP1_Initialize();
 
 # 1 "./setting_hardaware/adc.h" 1
 # 34 "./setting_hardaware/adc.h"
-double ADC_Read(int channel);
 void MQ_Read(double* values);
 void ADC_Initialize(void);
 # 10 "./setting_hardaware/setting.h" 2
@@ -4578,9 +4577,18 @@ void LCD_clear(void);
 # 1 "./setting_hardaware/buzzer.h" 1
 
 
-void speak(int ms);
+void speak(void);
 void buzzer_init(void);
 # 14 "./setting_hardaware/setting.h" 2
+
+# 1 "./setting_hardaware/dht.h" 1
+
+
+
+void DHT11_Start();
+void DHT11_CheckResponse();
+char DHT11_ReadData();
+# 15 "./setting_hardaware/setting.h" 2
 
 
 
@@ -4795,6 +4803,8 @@ char r[100];
 int count=0;
 int cycle=4;
 double value[3];
+char RH_Decimal,RH_Integral,T_Decimal,T_Integral;
+char Checksum;
 
 void main(void)
 {
@@ -4813,16 +4823,27 @@ void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
         }
         else{
 
-
             count=0;
             memset(r,'\0',sizeof(r));
 
-            _delay((unsigned long)((100)*(4000000/4000000.0)));
-            sprintf(r,"%s%.2f C",r,ADC_Read(0));
+            DHT11_Start();
+            DHT11_CheckResponse();
 
+            RH_Integral = DHT11_ReadData();
+            RH_Decimal = DHT11_ReadData();
+            T_Integral = DHT11_ReadData();
+            T_Decimal = DHT11_ReadData();
+            Checksum = DHT11_ReadData();
+
+            sprintf(r,"%d.%1d C  %d.%1d H",T_Integral,T_Decimal,RH_Integral,RH_Decimal);
             LCD_clear();
             Send2Lcd(0x80,r);
-# 59 "main.c"
+
+            MQ_Read(value);
+            memset(r,'\0',sizeof(r));
+            sprintf(r,"%d %d %d",(int)value[0],(int)value[1],(int)value[2]);
+            Send2Lcd(0xc0,r);
+# 64 "main.c"
         }
         PIR1bits.TMR1IF=0;
         TMR1=timer_val;

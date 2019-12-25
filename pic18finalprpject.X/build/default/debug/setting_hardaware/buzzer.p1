@@ -433,11 +433,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "13 setting_hardaware/buzzer.c
-[; ;setting_hardaware/buzzer.c: 13: void speak(int ms){
-[v _speak `(v ~T0 @X0 1 ef1`i ]
+[; ;setting_hardaware/buzzer.c: 13: void speak(){
+[v _speak `(v ~T0 @X0 1 ef ]
 {
 [e :U _speak ]
-[v _ms `i ~T0 @X0 1 r1 ]
 [f ]
 "14
 [; ;setting_hardaware/buzzer.c: 14:     LATBbits.LATB0=1;
@@ -458,6 +457,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _buzzer_init ]
 [f ]
+"20
+[; ;setting_hardaware/buzzer.c: 20:     speak();
+[e ( _speak ..  ]
 "21
 [; ;setting_hardaware/buzzer.c: 21: }
 [e :UE 282 ]

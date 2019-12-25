@@ -12,6 +12,7 @@
 #include "pin_manager.h"
 #include "LCD.h"
 #include "buzzer.h"
+#include "dht.h"
 
 #define _XTAL_FREQ 4000000
 

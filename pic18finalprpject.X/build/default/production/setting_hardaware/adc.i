@@ -5040,7 +5040,7 @@ void MQ_Read(double* values){
     lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
     co = MQGetGasPercentage(res/Ro,GAS_CO);
     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
-    ADCON0bits.ADON = 0;
+
 
     values[0]=lpg;
     values[1]=co;
@@ -5061,6 +5061,6 @@ double ADC_Read(int channel)
     digital = ADRES;
 
     result=digital*5.0/1024.0*100.0;
-    ADCON0bits.ADON = 0;
+
     return result;
 }

@@ -4526,17 +4526,17 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "setting_hardaware/buzzer.h" 1
 
 
-void speak(int ms);
+void speak(void);
 void buzzer_init(void);
 # 11 "setting_hardaware/buzzer.c" 2
 
 
-void speak(int ms){
+void speak(){
     LATBbits.LATB0=1;
     _delay((unsigned long)((40)*(4000000/4000.0)));
     LATBbits.LATB0=0;
 }
 
 void buzzer_init(){
-
+    speak();
 }

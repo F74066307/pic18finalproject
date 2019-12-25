@@ -675,9 +675,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59
 [; ;setting_hardaware/adc.c: 59:     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
 [e = _smoke ( _MQGetGasPercentage (2 , / _res _Ro _GAS_SMOKE ]
-"60
-[; ;setting_hardaware/adc.c: 60:     ADCON0bits.ADON = 0;
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
 "62
 [; ;setting_hardaware/adc.c: 62:     values[0]=lpg;
 [e = *U + _values * -> -> 0 `i `x -> -> # *U _values `i `x _lpg ]
@@ -733,9 +730,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "80
 [; ;setting_hardaware/adc.c: 80:     result=digital*5.0/1024.0*100.0;
 [e = _result * / * -> _digital `d .5.0 .1024.0 .100.0 ]
-"81
-[; ;setting_hardaware/adc.c: 81:     ADCON0bits.ADON = 0;
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
 "82
 [; ;setting_hardaware/adc.c: 82:     return result;
 [e ) _result ]

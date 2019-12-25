@@ -10,12 +10,12 @@
 #include <pic18f4520.h>
 #include "buzzer.h"
 
-void speak(int ms){
+void speak(){
     LATBbits.LATB0=1;
     __delay_ms(40);
     LATBbits.LATB0=0;
 }
 
 void buzzer_init(){
-    
+    speak();
 }

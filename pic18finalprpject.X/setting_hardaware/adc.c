@@ -53,31 +53,13 @@ void MQ_Read(double* values){
     ADCON0bits.GO = 1;
     while(ADCON0bits.GO_nDONE==1);
     digital = ADRES;
-    double res=5.00*(1023-digital)/1023;
+    double res=5.00*(1023-digital)/(double)digital;
     lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
     co = MQGetGasPercentage(res/Ro,GAS_CO);
     smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
-    ADCON0bits.ADON = 0;
+    //ADCON0bits.ADON = 0;
     
     values[0]=lpg;
     values[1]=co;
     values[2]=smoke;
-}
-
-double ADC_Read(int channel)
-{
-    //0 for LM35DZ,1 for MQ-135
-    int digital;
-    double result=0;
-    
-    ADCON0bits.CHS = channel ; // Select Channel0
-    ADCON0bits.ADON = 1;
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO_nDONE==1);
-
-    digital = ADRES;
-    //LM35DZ
-    result=digital*5.0/1024.0*100.0;
-    //ADCON0bits.ADON = 0;
-    return result;
 }

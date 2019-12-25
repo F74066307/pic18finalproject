@@ -75,9 +75,9 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    LCD_init();
     buzzer_init();
     ADC_Initialize();
+    LCD_init();
     TMR1_Initialize();
 }
 

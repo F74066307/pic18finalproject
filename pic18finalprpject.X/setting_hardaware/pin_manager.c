@@ -20,5 +20,5 @@ void PIN_MANAGER_Initialize(){
     TRISBbits.RB0=0;
     
     //sensor
-    TRISA = 0x03;//RA0,RA1 input
+    TRISA = 0b00000101;//RA0,RA2 input
 }

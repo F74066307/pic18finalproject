@@ -4604,7 +4604,6 @@ void CCP1_Initialize();
 
 # 1 "setting_hardaware/adc.h" 1
 # 34 "setting_hardaware/adc.h"
-double ADC_Read(int channel);
 void MQ_Read(double* values);
 void ADC_Initialize(void);
 # 10 "setting_hardaware/setting.h" 2
@@ -4636,9 +4635,18 @@ void LCD_clear(void);
 # 1 "setting_hardaware/buzzer.h" 1
 
 
-void speak(int ms);
+void speak(void);
 void buzzer_init(void);
 # 14 "setting_hardaware/setting.h" 2
+
+# 1 "setting_hardaware/dht.h" 1
+
+
+
+void DHT11_Start();
+void DHT11_CheckResponse();
+char DHT11_ReadData();
+# 15 "setting_hardaware/setting.h" 2
 
 
 
@@ -4667,9 +4675,9 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    LCD_init();
     buzzer_init();
     ADC_Initialize();
+    LCD_init();
     TMR1_Initialize();
 }
 

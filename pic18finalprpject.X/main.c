@@ -9,6 +9,8 @@ char r[100];
 int count=0;
 int cycle=4;
 double value[3];
+char RH_Decimal,RH_Integral,T_Decimal,T_Integral;
+char Checksum;
 
 void main(void) 
 {
@@ -27,24 +29,27 @@ void __interrupt(high_priority) Hi_ISR(void)
         }
         else{
             
-            
             count=0;
             memset(r,'\0',sizeof(r));
             
-            __delay_us(100);
-            sprintf(r,"%s%.2f C",r,ADC_Read(0));
+            DHT11_Start();
+            DHT11_CheckResponse();
+            /* read 40-bit data from DHT11 module */
+            RH_Integral = DHT11_ReadData();  /* read Relative Humidity's integral value */
+            RH_Decimal = DHT11_ReadData();   /* read Relative Humidity's decimal value */
+            T_Integral = DHT11_ReadData();   /* read Temperature's integral value */
+            T_Decimal = DHT11_ReadData();    /* read Relative Temperature's decimal value */
+            Checksum = DHT11_ReadData();     /* read 8-bit checksum value */
             
+            sprintf(r,"%d.%1d C  %d.%1d H",T_Integral,T_Decimal,RH_Integral,RH_Decimal);
             LCD_clear();
-            Send2Lcd(0x80,r);  /* Displays string in the first line       */
-    
-            /*
-            __delay_us(100);
-            MQ_Read(value);
+            Send2Lcd(0x80,r);  //* Displays string in the first line       
             
+            MQ_Read(value);
             memset(r,'\0',sizeof(r));
-            sprintf(r,"%s%d %d %d",r,(int)value[0],(int)value[1],(int)value[2]);
+            sprintf(r,"%d %d %d",(int)value[0],(int)value[1],(int)value[2]);
             Send2Lcd(0xc0,r);     // Displays string in the second line
-            */
+            
             //see whether out of limit and bep buzzer
             /*
              if(...){

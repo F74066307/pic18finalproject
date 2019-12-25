@@ -4543,5 +4543,5 @@ void PIN_MANAGER_Initialize(){
     TRISBbits.RB0=0;
 
 
-    TRISA = 0x03;
+    TRISA = 0b00000101;
 }

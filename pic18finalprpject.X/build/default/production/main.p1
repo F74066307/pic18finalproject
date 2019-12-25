@@ -53,6 +53,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14
 [; ;./setting_hardaware/LCD.h: 14: void Send2Lcd(const char Adr, const char *Lcd);
 [v _Send2Lcd `(v ~T0 @X0 0 ef2`Cuc`*Cuc ]
+"35 ./setting_hardaware/adc.h
+[; ;./setting_hardaware/adc.h: 35: void MQ_Read(double* values);
+[v _MQ_Read `(v ~T0 @X0 0 ef1`*d ]
 "5633 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
@@ -562,6 +565,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;main.c: 38:             Send2Lcd(0x80,r);
 [e ( _Send2Lcd (2 , -> -> 128 `i `uc -> &U _r `*Cuc ]
+"41
+[; ;main.c: 41:             _delay((unsigned long)((100)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"42
+[; ;main.c: 42:             MQ_Read(value);
+[e ( _MQ_Read (1 &U _value ]
+"44
+[; ;main.c: 44:             memset(r,'\0',sizeof(r));
+[e ( _memset (3 , , -> &U _r `*v -> -> 0 `ui `i -> # _r `ui ]
+"45
+[; ;main.c: 45:             sprintf(r,"%s%d %d %d",r,(int)value[0],(int)value[1],(int)value[2]);
+[e ( _sprintf (1 , , , , (. , &U _r :s 2C &U _r -> *U + &U _value * -> -> -> 0 `i `ui `ux -> -> # *U &U _value `ui `ux `i -> *U + &U _value * -> -> -> 1 `i `ui `ux -> -> # *U &U _value `ui `ux `i -> *U + &U _value * -> -> -> 2 `i `ui `ux -> -> # *U &U _value `ui `ux `i ]
+"46
+[; ;main.c: 46:             Send2Lcd(0xc0,r);
+[e ( _Send2Lcd (2 , -> -> 192 `i `uc -> &U _r `*Cuc ]
 "59
 [; ;main.c: 59:         }
 }
@@ -583,5 +601,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 65: }
 [e :UE 288 ]
 }
-[p f _sprintf 8724480 ]
+[p f _sprintf 8724608 ]
+[a 2C 37 115 37 100 32 37 100 32 37 100 0 ]
 [a 1C 37 115 37 46 50 102 32 67 0 ]

@@ -4822,6 +4822,14 @@ void __attribute__((picinterrupt(("high_priority")))) Hi_ISR(void)
 
             LCD_clear();
             Send2Lcd(0x80,r);
+
+
+            _delay((unsigned long)((100)*(4000000/4000000.0)));
+            MQ_Read(value);
+
+            memset(r,'\0',sizeof(r));
+            sprintf(r,"%s%d %d %d",r,(int)value[0],(int)value[1],(int)value[2]);
+            Send2Lcd(0xc0,r);
 # 59 "main.c"
         }
         PIR1bits.TMR1IF=0;
