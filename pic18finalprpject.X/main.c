@@ -28,7 +28,6 @@ void __interrupt(high_priority) Hi_ISR(void)
             count++;
         }
         else{
-            
             count=0;
             memset(r,'\0',sizeof(r));
             
@@ -51,7 +50,8 @@ void __interrupt(high_priority) Hi_ISR(void)
             Send2Lcd(0xc0,r);     // Displays string in the second line
             
             //see whether out of limit and bep buzzer
-            
+            //change cycle if in need
+            //........
              if(value[0]>=500||value[1]>=500||value[2]>=500||T_Integral>=40||RH_Integral>=80){
                 speak();
                 speak();
@@ -60,10 +60,6 @@ void __interrupt(high_priority) Hi_ISR(void)
              else{
                  cycle=4;
              }
-             
-            
-            //change cycle if in need
-            //........
         }
         PIR1bits.TMR1IF=0;
         TMR1=timer_val;

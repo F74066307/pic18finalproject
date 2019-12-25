@@ -3,12 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/pic18finalproject/pic18finalprpject.X/setting_hardaware/LCD.c</file>
-            <file>file:/C:/pic18finalproject/pic18finalprpject.X/setting_hardaware/adc.c</file>
-            <file>file:/C:/pic18finalproject/pic18finalprpject.X/setting_hardaware/setting.c</file>
-            <file>file:/C:/pic18finalproject/pic18finalprpject.X/setting_hardaware/uart.c</file>
-            <file>file:/C:/pic18finalproject/pic18finalprpject.X/main.c</file>
-            <file>file:/C:/pic18finalproject/pic18finalprpject.X/setting_hardaware/interrupt_manager.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/buzzer.h</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/main.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/interrupt_manager.h</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/buzzer.c</file>
+            <file>file:/C:/Program%20Files%20(x86)/Microchip/xc8/v2.10/pic/sources/c99/common/sprcdiv.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/LCD.c</file>
+            <file>file:/C:/Program%20Files%20(x86)/Microchip/xc8/v2.10/pic/sources/c99/common/aomod.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/setting.h</file>
+            <file>file:/C:/Program%20Files%20(x86)/Microchip/xc8/v2.10/pic/sources/c99/common/logf.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/setting.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/adc.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/dht.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/adc.h</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/pin_manager.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/interrupt_manager.c</file>
+            <file>file:/C:/Users/70136/MPLABXProjects/pic18finalproject/pic18finalprpject.X/setting_hardaware/dht.h</file>
         </group>
     </open-files>
 </project-private>
