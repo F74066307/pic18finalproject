@@ -51,13 +51,14 @@ void __interrupt(high_priority) Hi_ISR(void)
             Send2Lcd(0xc0,r);     // Displays string in the second line
             
             //see whether out of limit and bep buzzer
-            /*
-             if(...){
-             * speak();
-             * __delay_ms(40);
-             * speak();
-             * }
-             */
+            
+             if(value[0]>500||value[1]>500||value[2]>500||T_Integral>40||RH_Integral>80){
+              speak();
+              __delay_ms(40);
+              speak();
+              cycle=2;
+              }
+             
             
             //change cycle if in need
             //........
