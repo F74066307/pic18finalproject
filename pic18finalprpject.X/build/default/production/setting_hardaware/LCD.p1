@@ -4,19 +4,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 "1207
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1207:     struct {
-[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S51 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
 "1217
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1217:     struct {
-[s S52 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S52 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S47 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
 "1206
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1206: typedef union {
-[u S50 `S51 1 `S52 1 ]
-[n S50 . . . ]
+[u S45 `S46 1 `S47 1 ]
+[n S45 . . . ]
 "1228
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1228: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
-[v _LATCbits `VS50 ~T0 @X0 0 e@3979 ]
+[v _LATCbits `VS45 ~T0 @X0 0 e@3979 ]
 [v F2518 `(v ~T0 @X0 1 tf1`ul ]
 "187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v __delay `JF2518 ~T0 @X0 0 e ]
@@ -435,178 +435,160 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"15 setting_hardaware/LCD.c
-[; ;setting_hardaware/LCD.c: 15: void Cmd(int Value)
+"8 setting_hardaware/LCD.c
+[; ;setting_hardaware/LCD.c: 8: void Cmd(int Value) {
 [v _Cmd `(v ~T0 @X0 1 ef1`i ]
-"16
-[; ;setting_hardaware/LCD.c: 16: {
 {
 [e :U _Cmd ]
-"15
-[; ;setting_hardaware/LCD.c: 15: void Cmd(int Value)
 [v _Value `i ~T0 @X0 1 r1 ]
-"16
-[; ;setting_hardaware/LCD.c: 16: {
 [f ]
-"17
-[; ;setting_hardaware/LCD.c: 17:  LATD = Value;
+"9
+[; ;setting_hardaware/LCD.c: 9:     LATD = Value;
 [e = _LATD -> _Value `uc ]
-"18
-[; ;setting_hardaware/LCD.c: 18:  LATCbits.LC4=0;
+"10
+[; ;setting_hardaware/LCD.c: 10:     LATCbits.LC4 = 0;
 [e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
-"20
-[; ;setting_hardaware/LCD.c: 20:  LATCbits.LC6=0;
+"13
+[; ;setting_hardaware/LCD.c: 13:     LATCbits.LC6 = 0;
 [e = . . _LATCbits 1 6 -> -> 0 `i `uc ]
-"21
-[; ;setting_hardaware/LCD.c: 21:  _delay((unsigned long)((25)*(4000000/4000000.0)));
+"14
+[; ;setting_hardaware/LCD.c: 14:     _delay((unsigned long)((25)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 25 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"22
-[; ;setting_hardaware/LCD.c: 22:  LATCbits.LC6=1;
+"15
+[; ;setting_hardaware/LCD.c: 15:     LATCbits.LC6 = 1;
 [e = . . _LATCbits 1 6 -> -> 1 `i `uc ]
-"23
-[; ;setting_hardaware/LCD.c: 23:  _delay((unsigned long)((25)*(4000000/4000000.0)));
+"16
+[; ;setting_hardaware/LCD.c: 16:     _delay((unsigned long)((25)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 25 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"24
-[; ;setting_hardaware/LCD.c: 24:  LATCbits.LC6=0;
+"17
+[; ;setting_hardaware/LCD.c: 17:     LATCbits.LC6 = 0;
 [e = . . _LATCbits 1 6 -> -> 0 `i `uc ]
-"25
-[; ;setting_hardaware/LCD.c: 25:  _delay((unsigned long)((3)*(4000000/4000.0)));
+"18
+[; ;setting_hardaware/LCD.c: 18:     _delay((unsigned long)((3)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 3 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"26
-[; ;setting_hardaware/LCD.c: 26: }
+"19
+[; ;setting_hardaware/LCD.c: 19: }
 [e :UE 281 ]
 }
-"28
-[; ;setting_hardaware/LCD.c: 28: void Data(int Value)
+"26
+[; ;setting_hardaware/LCD.c: 26: void Data(int Value) {
 [v _Data `(v ~T0 @X0 1 ef1`i ]
-"29
-[; ;setting_hardaware/LCD.c: 29: {
 {
 [e :U _Data ]
-"28
-[; ;setting_hardaware/LCD.c: 28: void Data(int Value)
 [v _Value `i ~T0 @X0 1 r1 ]
-"29
-[; ;setting_hardaware/LCD.c: 29: {
 [f ]
-"30
-[; ;setting_hardaware/LCD.c: 30:  LATD = Value;
+"27
+[; ;setting_hardaware/LCD.c: 27:     LATD = Value;
 [e = _LATD -> _Value `uc ]
-"31
-[; ;setting_hardaware/LCD.c: 31:  LATCbits.LC4=1;
+"28
+[; ;setting_hardaware/LCD.c: 28:     LATCbits.LC4 = 1;
 [e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
-"33
-[; ;setting_hardaware/LCD.c: 33:  LATCbits.LC6=0;
+"31
+[; ;setting_hardaware/LCD.c: 31:     LATCbits.LC6 = 0;
 [e = . . _LATCbits 1 6 -> -> 0 `i `uc ]
+"32
+[; ;setting_hardaware/LCD.c: 32:     _delay((unsigned long)((25)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"33
+[; ;setting_hardaware/LCD.c: 33:     LATCbits.LC6 = 1;
+[e = . . _LATCbits 1 6 -> -> 1 `i `uc ]
 "34
-[; ;setting_hardaware/LCD.c: 34:  _delay((unsigned long)((25)*(4000000/4000000.0)));
+[; ;setting_hardaware/LCD.c: 34:     _delay((unsigned long)((25)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 25 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "35
-[; ;setting_hardaware/LCD.c: 35:  LATCbits.LC6=1;
-[e = . . _LATCbits 1 6 -> -> 1 `i `uc ]
-"36
-[; ;setting_hardaware/LCD.c: 36:  _delay((unsigned long)((25)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"37
-[; ;setting_hardaware/LCD.c: 37:  LATCbits.LC6=0;
+[; ;setting_hardaware/LCD.c: 35:     LATCbits.LC6 = 0;
 [e = . . _LATCbits 1 6 -> -> 0 `i `uc ]
-"38
-[; ;setting_hardaware/LCD.c: 38:  _delay((unsigned long)((3)*(4000000/4000.0)));
+"36
+[; ;setting_hardaware/LCD.c: 36:     _delay((unsigned long)((3)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 3 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"39
-[; ;setting_hardaware/LCD.c: 39: }
+"37
+[; ;setting_hardaware/LCD.c: 37: }
 [e :UE 282 ]
 }
-"41
-[; ;setting_hardaware/LCD.c: 41: void Send2Lcd(const char Adr, const char *Lcd)
+"45
+[; ;setting_hardaware/LCD.c: 45: void Send2Lcd(const char Adr, const char *Lcd) {
 [v _Send2Lcd `(v ~T0 @X0 1 ef2`Cuc`*Cuc ]
-"42
-[; ;setting_hardaware/LCD.c: 42: {
 {
 [e :U _Send2Lcd ]
-"41
-[; ;setting_hardaware/LCD.c: 41: void Send2Lcd(const char Adr, const char *Lcd)
 [v _Adr `Cuc ~T0 @X0 1 r1 ]
 [v _Lcd `*Cuc ~T0 @X0 1 r2 ]
-"42
-[; ;setting_hardaware/LCD.c: 42: {
 [f ]
-"43
-[; ;setting_hardaware/LCD.c: 43:  Cmd(Adr);
+"46
+[; ;setting_hardaware/LCD.c: 46:     Cmd(Adr);
 [e ( _Cmd (1 -> _Adr `i ]
-"44
-[; ;setting_hardaware/LCD.c: 44:  while(*Lcd!='\0')
+"47
+[; ;setting_hardaware/LCD.c: 47:     while (*Lcd != '\0')
 [e $U 284  ]
 [e :U 285 ]
-"45
-[; ;setting_hardaware/LCD.c: 45:  {
-{
-"46
-[; ;setting_hardaware/LCD.c: 46:   Data(*Lcd);
-[e ( _Data (1 -> *U _Lcd `i ]
-"47
-[; ;setting_hardaware/LCD.c: 47:   Lcd++;
-[e ++ _Lcd * -> -> 1 `i `x -> -> # *U _Lcd `i `x ]
 "48
-[; ;setting_hardaware/LCD.c: 48:  }
+[; ;setting_hardaware/LCD.c: 48:     {
+{
+"49
+[; ;setting_hardaware/LCD.c: 49:         Data(*Lcd);
+[e ( _Data (1 -> *U _Lcd `i ]
+"50
+[; ;setting_hardaware/LCD.c: 50:         Lcd++;
+[e ++ _Lcd * -> -> 1 `i `x -> -> # *U _Lcd `i `x ]
+"51
+[; ;setting_hardaware/LCD.c: 51:     }
 }
 [e :U 284 ]
-"44
-[; ;setting_hardaware/LCD.c: 44:  while(*Lcd!='\0')
+"47
+[; ;setting_hardaware/LCD.c: 47:     while (*Lcd != '\0')
 [e $ != -> *U _Lcd `ui -> 0 `ui 285  ]
 [e :U 286 ]
-"49
-[; ;setting_hardaware/LCD.c: 49: }
+"52
+[; ;setting_hardaware/LCD.c: 52: }
 [e :UE 283 ]
 }
-"51
-[; ;setting_hardaware/LCD.c: 51: void LCD_clear(){
+"57
+[; ;setting_hardaware/LCD.c: 57: void LCD_clear() {
 [v _LCD_clear `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_clear ]
 [f ]
-"52
-[; ;setting_hardaware/LCD.c: 52:     Cmd(0X01);
+"58
+[; ;setting_hardaware/LCD.c: 58:     Cmd(0X01);
 [e ( _Cmd (1 -> 1 `i ]
-"53
-[; ;setting_hardaware/LCD.c: 53: }
+"59
+[; ;setting_hardaware/LCD.c: 59: }
 [e :UE 287 ]
 }
-"55
-[; ;setting_hardaware/LCD.c: 55: void LCD_init(){
+"64
+[; ;setting_hardaware/LCD.c: 64: void LCD_init() {
 [v _LCD_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _LCD_init ]
 [f ]
-"57
-[; ;setting_hardaware/LCD.c: 57:     _delay((unsigned long)((15)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"58
-[; ;setting_hardaware/LCD.c: 58:     Cmd(0X38);
-[e ( _Cmd (1 -> 56 `i ]
-"59
-[; ;setting_hardaware/LCD.c: 59:     _delay((unsigned long)((125)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 125 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"61
-[; ;setting_hardaware/LCD.c: 61:     Cmd(0X01);
-[e ( _Cmd (1 -> 1 `i ]
-"62
-[; ;setting_hardaware/LCD.c: 62:     Cmd(0X06);
-[e ( _Cmd (1 -> 6 `i ]
-"63
-[; ;setting_hardaware/LCD.c: 63:     Cmd(0X0C);
-[e ( _Cmd (1 -> 12 `i ]
-"64
-[; ;setting_hardaware/LCD.c: 64:     _delay((unsigned long)((125)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 125 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"65
-[; ;setting_hardaware/LCD.c: 65:     Send2Lcd(0x80,"monitor");
-[e ( _Send2Lcd (2 , -> -> 128 `i `uc :s 1C ]
 "66
-[; ;setting_hardaware/LCD.c: 66:     Send2Lcd(0xc0,"start");
+[; ;setting_hardaware/LCD.c: 66:     _delay((unsigned long)((15)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"69
+[; ;setting_hardaware/LCD.c: 69:     Cmd(0X38);
+[e ( _Cmd (1 -> 56 `i ]
+"70
+[; ;setting_hardaware/LCD.c: 70:     _delay((unsigned long)((125)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 125 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"72
+[; ;setting_hardaware/LCD.c: 72:     LCD_clear();
+[e ( _LCD_clear ..  ]
+"73
+[; ;setting_hardaware/LCD.c: 73:     Cmd(0X06);
+[e ( _Cmd (1 -> 6 `i ]
+"74
+[; ;setting_hardaware/LCD.c: 74:     Cmd(0X0C);
+[e ( _Cmd (1 -> 12 `i ]
+"75
+[; ;setting_hardaware/LCD.c: 75:     _delay((unsigned long)((125)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 125 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"77
+[; ;setting_hardaware/LCD.c: 77:     Send2Lcd(0x80, "monitor");
+[e ( _Send2Lcd (2 , -> -> 128 `i `uc :s 1C ]
+"78
+[; ;setting_hardaware/LCD.c: 78:     Send2Lcd(0xc0, "start");
 [e ( _Send2Lcd (2 , -> -> 192 `i `uc :s 2C ]
-"67
-[; ;setting_hardaware/LCD.c: 67: }
+"79
+[; ;setting_hardaware/LCD.c: 79: }
 [e :UE 288 ]
 }
 [a 2C 115 116 97 114 116 0 ]

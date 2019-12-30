@@ -57,21 +57,35 @@
 
 #include "setting.h"
 
-int timer_val=65535-(1000000/4)/4;
+//timer val
+int timer_val = 65535 - (1000000 / 4) / 4;
 
-void TMR1_Initialize(){
-    T1CONbits.RD16=1;
-    T1CONbits.T1CKPS=2;//pres=4
-    T1CONbits.TMR1ON=1;
-    PIR1bits.TMR1IF=0;
-    PIE1bits.TMR1IE=1;
-    IPR1bits.TMR1IP=1;
-    TMR1=timer_val;//0.25s
+/*
+ * init timer1
+ */
+void TMR1_Initialize() {
+    T1CONbits.RD16 = 1;
+    T1CONbits.T1CKPS = 2; //pre scaler=4
+    T1CONbits.TMR1ON = 1;
+    PIR1bits.TMR1IF = 0;
+    PIE1bits.TMR1IE = 1;
+    IPR1bits.TMR1IP = 1;
+    TMR1 = timer_val; //0.25s
 }
 
+/*
+ * init oscillator
+ */
+void OSCILLATOR_Initialize(void) {
+    IRCF2 = 1; //4 MHz
+    IRCF1 = 1;
+    IRCF0 = 0;
+}
 
-void SYSTEM_Initialize(void)
-{
+/*
+ * init the whole system
+ */
+void SYSTEM_Initialize(void) {
     INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
@@ -81,9 +95,3 @@ void SYSTEM_Initialize(void)
     TMR1_Initialize();
 }
 
-void OSCILLATOR_Initialize(void)
-{
-    IRCF2 = 1; //4 MHz
-    IRCF1 = 1;
-    IRCF0 = 0;
-}

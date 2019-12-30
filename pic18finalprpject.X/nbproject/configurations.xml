@@ -7,14 +7,12 @@
       <logicalFolder name="f1" displayName="Setting_hd" projectFiles="true">
         <itemPath>setting_hardaware/setting.h</itemPath>
         <itemPath>setting_hardaware/pin_manager.h</itemPath>
-        <itemPath>setting_hardaware/uart.h</itemPath>
         <itemPath>setting_hardaware/interrupt_manager.h</itemPath>
-        <itemPath>setting_hardaware/ccp1.h</itemPath>
         <itemPath>setting_hardaware/adc.h</itemPath>
         <itemPath>setting_hardaware/LCD.h</itemPath>
         <itemPath>setting_hardaware/buzzer.h</itemPath>
+        <itemPath>setting_hardaware/dht.h</itemPath>
       </logicalFolder>
-      <itemPath>setting_hardaware/dht.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -25,9 +23,7 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Setting_hd" projectFiles="true">
         <itemPath>setting_hardaware/setting.c</itemPath>
-        <itemPath>setting_hardaware/uart.c</itemPath>
         <itemPath>setting_hardaware/interrupt_manager.c</itemPath>
-        <itemPath>setting_hardaware/ccp1.c</itemPath>
         <itemPath>setting_hardaware/adc.c</itemPath>
         <itemPath>setting_hardaware/pin_manager.c</itemPath>
         <itemPath>setting_hardaware/LCD.c</itemPath>

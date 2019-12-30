@@ -7,125 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "setting_hardaware/adc.c" 2
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\xc8debug.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 122 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 168 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
-# 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-int atoi (const char *);
-long atol (const char *);
-long long atoll (const char *);
-double atof (const char *);
-
-float strtof (const char *restrict, char **restrict);
-double strtod (const char *restrict, char **restrict);
-long double strtold (const char *restrict, char **restrict);
-
-
-
-long strtol (const char *restrict, char **restrict, int);
-unsigned long strtoul (const char *restrict, char **restrict, int);
-long long strtoll (const char *restrict, char **restrict, int);
-unsigned long long strtoull (const char *restrict, char **restrict, int);
-
-int rand (void);
-void srand (unsigned);
-
-          void abort (void);
-int atexit (void (*) (void));
-          void exit (int);
-          void _Exit (int);
-
-void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
-
-__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
-
-int abs (int);
-long labs (long);
-long long llabs (long long);
-
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-typedef struct { long long quot, rem; } lldiv_t;
-
-div_t div (int, int);
-ldiv_t ldiv (long, long);
-lldiv_t lldiv (long long, long long);
-
-typedef struct { unsigned int quot, rem; } udiv_t;
-typedef struct { unsigned long quot, rem; } uldiv_t;
-udiv_t udiv (unsigned int, unsigned int);
-uldiv_t uldiv (unsigned long, unsigned long);
-
-
-
-
-
-size_t __ctype_get_mb_cur_max(void);
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\xc8debug.h" 2 3
-
-
-
-
-
-
-
-
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 23 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18.h" 1 3
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 2 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18.h" 2 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18_chip_select.h" 1 3
-# 634 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18_chip_select.h" 3
+# 1 "setting_hardaware/adc.h" 1
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18f4520.h" 1 3
 # 44 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18f4520.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__at.h" 1 3
@@ -4475,7 +4357,126 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 634 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18_chip_select.h" 2 3
+# 1 "setting_hardaware/adc.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
+# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\xc8debug.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 122 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 168 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 204 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
+# 21 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
+
+
+int atoi (const char *);
+long atol (const char *);
+long long atoll (const char *);
+double atof (const char *);
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+int rand (void);
+void srand (unsigned);
+
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+long long llabs (long long);
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+typedef struct { long long quot, rem; } lldiv_t;
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+lldiv_t lldiv (long long, long long);
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+
+
+
+
+
+size_t __ctype_get_mb_cur_max(void);
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\xc8debug.h" 2 3
+
+
+
+
+
+
+
+
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 23 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
+# 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18.h" 1 3
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 2 3
+# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18.h" 2 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18_chip_select.h" 1 3
 # 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18.h" 2 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18.h" 3
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
@@ -4512,8 +4513,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "setting_hardaware/adc.c" 2
-
+# 2 "setting_hardaware/adc.h" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 1 3
@@ -4977,90 +4977,121 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 4 "setting_hardaware/adc.c" 2
+# 4 "setting_hardaware/adc.h" 2
 
-# 1 "setting_hardaware/adc.h" 1
-# 34 "setting_hardaware/adc.h"
-double ADC_Read(int channel);
+
+
 void MQ_Read(double* values);
 void ADC_Initialize(void);
-# 5 "setting_hardaware/adc.c" 2
+# 1 "setting_hardaware/adc.c" 2
 
 
 
-double LPGCurve[3] = {2.3,0.21,-0.47};
-double COCurve[3] = {2.3,0.72,-0.34};
-double SmokeCurve[3] = {2.3,0.53,-0.44};
-double Ro = 10.0;
-int RL_VALUE = 1;
+double LPGCurve[3] = {2.3, 0.21, -0.47};
+double COCurve[3] = {2.3, 0.72, -0.34};
+double SmokeCurve[3] = {2.3, 0.53, -0.44};
+
 
 int GAS_LPG = 0;
 int GAS_CO = 1;
 int GAS_SMOKE = 2;
 
-double lpg = 0;
-double co = 0;
-double smoke = 0;
+
+double Ro;
+
+
+
+
 
 
 
 int MQGetPercentage(double rs_ro_ratio, double *pcurve) {
-  return (powf(10,(((logf(rs_ro_ratio)-pcurve[1])/pcurve[2]) + pcurve[0])));
+    return (powf(10,(((log10f(rs_ro_ratio) - pcurve[1]) / pcurve[2]) + pcurve[0])));
 }
 
+
+
+
+
+
+
 double MQGetGasPercentage(double rs_ro_ratio, int gas_id) {
-  if ( gas_id == GAS_LPG ) {
-     return MQGetPercentage(rs_ro_ratio,LPGCurve);
-  } else if ( gas_id == GAS_CO ) {
-     return MQGetPercentage(rs_ro_ratio,COCurve);
-  } else if ( gas_id == GAS_SMOKE ) {
-     return MQGetPercentage(rs_ro_ratio,SmokeCurve);
-  }
-  return 0;
+    if (gas_id == GAS_LPG) {
+        return MQGetPercentage(rs_ro_ratio, LPGCurve);
+    } else if (gas_id == GAS_CO) {
+        return MQGetPercentage(rs_ro_ratio, COCurve);
+    } else if (gas_id == GAS_SMOKE) {
+        return MQGetPercentage(rs_ro_ratio, SmokeCurve);
+    }
+    return 0;
+}
+
+
+
+
+
+
+void MQ_Read(double* values) {
+
+    int digital;
+
+
+    double lpg;
+    double co;
+    double smoke;
+
+    ADCON0bits.CHS = 0;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GO = 1;
+
+    while (ADCON0bits.GO_nDONE == 1);
+
+
+    digital = ADRES;
+
+
+    double res = 1.00 * (1023 - digital) / (double) digital;
+    lpg = MQGetGasPercentage(res / Ro, GAS_LPG);
+    if (lpg >= 9000) {
+        lpg = 9000;
+    }
+    co = MQGetGasPercentage(res / Ro, GAS_CO);
+    if (co >= 9000) {
+        co = 9000;
+    }
+    smoke = MQGetGasPercentage(res / Ro, GAS_SMOKE);
+    if (smoke >= 9000) {
+        smoke = 9000;
+    }
+
+
+    values[0] = lpg;
+    values[1] = co;
+    values[2] = smoke;
+
 }
 
 void ADC_Initialize(void) {
 
     ADCON1 = 0x0D;
-    ADCON2=0x94;
-    ADRES=0;
-
-}
-
-void MQ_Read(double* values){
-    int digital;
+    ADCON2 = 0x94;
+    ADRES = 0;
 
 
-    ADCON0bits.CHS = 1 ;
-    ADCON0bits.ADON = 1;
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO_nDONE==1);
-    digital = ADRES;
-    double res=5.00*(1023-digital)/1023;
-    lpg = MQGetGasPercentage(res/Ro,GAS_LPG);
-    co = MQGetGasPercentage(res/Ro,GAS_CO);
-    smoke = MQGetGasPercentage(res/Ro,GAS_SMOKE);
-
-
-    values[0]=lpg;
-    values[1]=co;
-    values[2]=smoke;
-}
-
-double ADC_Read(int channel)
-{
-
-    int digital;
-    double result=0;
-
-    ADCON0bits.CHS = channel ;
-    ADCON0bits.ADON = 1;
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO_nDONE==1);
-
-    digital = ADRES;
-
-    result=digital*5.0/1024.0*100.0;
-
-    return result;
+    int i;
+    double val = 0;
+    for (i = 0; i < 10; i++) {
+        int digital;
+        ADCON0bits.CHS = 0;
+        ADCON0bits.ADON = 1;
+        ADCON0bits.GO = 1;
+        while (ADCON0bits.GO_nDONE == 1);
+        digital = ADRES;
+        double res = 1.00 * (1023 - digital) / (double) digital;
+        val += res;
+        _delay((unsigned long)((50)*(4000000/4000000.0)));
+    }
+    val = val / 10;
+    val = val / 10.0;
+    Ro = val;
 }

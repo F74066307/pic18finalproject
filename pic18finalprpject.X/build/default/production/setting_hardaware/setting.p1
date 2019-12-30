@@ -70,25 +70,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5633
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 5633: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
 [v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
-"3 setting_hardaware/interrupt_manager.h
-[; ;setting_hardaware/interrupt_manager.h: 3: void INTERRUPT_Initialize(void);
-[v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
-"6 setting_hardaware/pin_manager.h
-[; ;setting_hardaware/pin_manager.h: 6: void PIN_MANAGER_Initialize(void);
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"19 setting_hardaware/setting.h
-[; ;setting_hardaware/setting.h: 19: void OSCILLATOR_Initialize(void);
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"15 setting_hardaware/LCD.h
-[; ;setting_hardaware/LCD.h: 15: void LCD_init(void);
-[v _LCD_init `(v ~T0 @X0 0 ef ]
-"4 setting_hardaware/buzzer.h
-[; ;setting_hardaware/buzzer.h: 4: void buzzer_init(void);
-[v _buzzer_init `(v ~T0 @X0 0 ef ]
-"36 setting_hardaware/adc.h
-[; ;setting_hardaware/adc.h: 36: void ADC_Initialize(void);
-[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
-"7555 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h
+"7555
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7555: extern volatile __bit IRCF2 __attribute__((address(0x7E9E)));
 [v _IRCF2 `Vb ~T0 @X0 0 e@32414 ]
 "7552
@@ -97,6 +79,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7549
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7549: extern volatile __bit IRCF0 __attribute__((address(0x7E9C)));
 [v _IRCF0 `Vb ~T0 @X0 0 e@32412 ]
+"4 setting_hardaware/interrupt_manager.h
+[; ;setting_hardaware/interrupt_manager.h: 4: void INTERRUPT_Initialize(void);
+[v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
+"4 setting_hardaware/pin_manager.h
+[; ;setting_hardaware/pin_manager.h: 4: void PIN_MANAGER_Initialize(void);
+[v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
+"6 setting_hardaware/buzzer.h
+[; ;setting_hardaware/buzzer.h: 6: void buzzer_init(void);
+[v _buzzer_init `(v ~T0 @X0 0 ef ]
+"8 setting_hardaware/adc.h
+[; ;setting_hardaware/adc.h: 8: void ADC_Initialize(void);
+[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"10 setting_hardaware/LCD.h
+[; ;setting_hardaware/LCD.h: 10: void LCD_init(void);
+[v _LCD_init `(v ~T0 @X0 0 ef ]
 "2 setting_hardaware/setting.c
 [; ;setting_hardaware/setting.c: 2: 
 [p x OSC = INTIO67 ]
@@ -578,97 +575,93 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"20 setting_hardaware/setting.h
-[; ;setting_hardaware/setting.h: 20: int timer_val;
+"14 setting_hardaware/setting.h
+[; ;setting_hardaware/setting.h: 14: int timer_val;
 [v _timer_val `i ~T0 @X0 1 e ]
-"60 setting_hardaware/setting.c
-[; ;setting_hardaware/setting.c: 60: int timer_val=65535-(1000000/4)/4;
+"61 setting_hardaware/setting.c
+[; ;setting_hardaware/setting.c: 61: int timer_val = 65535 - (1000000 / 4) / 4;
 [v _timer_val `i ~T0 @X0 1 e ]
 [i _timer_val
 -> - -> 65535 `l / / -> 1000000 `l -> -> 4 `i `l -> -> 4 `i `l `i
 ]
-"62
-[; ;setting_hardaware/setting.c: 62: void TMR1_Initialize(){
+"66
+[; ;setting_hardaware/setting.c: 66: void TMR1_Initialize() {
 [v _TMR1_Initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _TMR1_Initialize ]
 [f ]
-"63
-[; ;setting_hardaware/setting.c: 63:     T1CONbits.RD16=1;
-[e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
-"64
-[; ;setting_hardaware/setting.c: 64:     T1CONbits.T1CKPS=2;
-[e = . . _T1CONbits 1 4 -> -> 2 `i `uc ]
-"65
-[; ;setting_hardaware/setting.c: 65:     T1CONbits.TMR1ON=1;
-[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
-"66
-[; ;setting_hardaware/setting.c: 66:     PIR1bits.TMR1IF=0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "67
-[; ;setting_hardaware/setting.c: 67:     PIE1bits.TMR1IE=1;
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+[; ;setting_hardaware/setting.c: 67:     T1CONbits.RD16 = 1;
+[e = . . _T1CONbits 1 6 -> -> 1 `i `uc ]
 "68
-[; ;setting_hardaware/setting.c: 68:     IPR1bits.TMR1IP=1;
-[e = . . _IPR1bits 0 0 -> -> 1 `i `uc ]
+[; ;setting_hardaware/setting.c: 68:     T1CONbits.T1CKPS = 2;
+[e = . . _T1CONbits 1 4 -> -> 2 `i `uc ]
 "69
-[; ;setting_hardaware/setting.c: 69:     TMR1=timer_val;
-[e = _TMR1 -> _timer_val `us ]
+[; ;setting_hardaware/setting.c: 69:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
 "70
-[; ;setting_hardaware/setting.c: 70: }
+[; ;setting_hardaware/setting.c: 70:     PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"71
+[; ;setting_hardaware/setting.c: 71:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"72
+[; ;setting_hardaware/setting.c: 72:     IPR1bits.TMR1IP = 1;
+[e = . . _IPR1bits 0 0 -> -> 1 `i `uc ]
+"73
+[; ;setting_hardaware/setting.c: 73:     TMR1 = timer_val;
+[e = _TMR1 -> _timer_val `us ]
+"74
+[; ;setting_hardaware/setting.c: 74: }
 [e :UE 281 ]
 }
-"73
-[; ;setting_hardaware/setting.c: 73: void SYSTEM_Initialize(void)
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
-"74
-[; ;setting_hardaware/setting.c: 74: {
-{
-[e :U _SYSTEM_Initialize ]
-[f ]
-"75
-[; ;setting_hardaware/setting.c: 75:     INTERRUPT_Initialize();
-[e ( _INTERRUPT_Initialize ..  ]
-"76
-[; ;setting_hardaware/setting.c: 76:     PIN_MANAGER_Initialize();
-[e ( _PIN_MANAGER_Initialize ..  ]
-"77
-[; ;setting_hardaware/setting.c: 77:     OSCILLATOR_Initialize();
-[e ( _OSCILLATOR_Initialize ..  ]
-"78
-[; ;setting_hardaware/setting.c: 78:     LCD_init();
-[e ( _LCD_init ..  ]
 "79
-[; ;setting_hardaware/setting.c: 79:     buzzer_init();
-[e ( _buzzer_init ..  ]
-"80
-[; ;setting_hardaware/setting.c: 80:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
-"81
-[; ;setting_hardaware/setting.c: 81:     TMR1_Initialize();
-[e ( _TMR1_Initialize ..  ]
-"82
-[; ;setting_hardaware/setting.c: 82: }
-[e :UE 282 ]
-}
-"84
-[; ;setting_hardaware/setting.c: 84: void OSCILLATOR_Initialize(void)
+[; ;setting_hardaware/setting.c: 79: void OSCILLATOR_Initialize(void) {
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"85
-[; ;setting_hardaware/setting.c: 85: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"86
-[; ;setting_hardaware/setting.c: 86:     IRCF2 = 1;
+"80
+[; ;setting_hardaware/setting.c: 80:     IRCF2 = 1;
 [e = _IRCF2 -> -> 1 `i `b ]
-"87
-[; ;setting_hardaware/setting.c: 87:     IRCF1 = 1;
+"81
+[; ;setting_hardaware/setting.c: 81:     IRCF1 = 1;
 [e = _IRCF1 -> -> 1 `i `b ]
-"88
-[; ;setting_hardaware/setting.c: 88:     IRCF0 = 0;
+"82
+[; ;setting_hardaware/setting.c: 82:     IRCF0 = 0;
 [e = _IRCF0 -> -> 0 `i `b ]
+"83
+[; ;setting_hardaware/setting.c: 83: }
+[e :UE 282 ]
+}
+"88
+[; ;setting_hardaware/setting.c: 88: void SYSTEM_Initialize(void) {
+[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
+{
+[e :U _SYSTEM_Initialize ]
+[f ]
 "89
-[; ;setting_hardaware/setting.c: 89: }
+[; ;setting_hardaware/setting.c: 89:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
+"90
+[; ;setting_hardaware/setting.c: 90:     PIN_MANAGER_Initialize();
+[e ( _PIN_MANAGER_Initialize ..  ]
+"91
+[; ;setting_hardaware/setting.c: 91:     OSCILLATOR_Initialize();
+[e ( _OSCILLATOR_Initialize ..  ]
+"92
+[; ;setting_hardaware/setting.c: 92:     buzzer_init();
+[e ( _buzzer_init ..  ]
+"93
+[; ;setting_hardaware/setting.c: 93:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
+"94
+[; ;setting_hardaware/setting.c: 94:     LCD_init();
+[e ( _LCD_init ..  ]
+"95
+[; ;setting_hardaware/setting.c: 95:     TMR1_Initialize();
+[e ( _TMR1_Initialize ..  ]
+"96
+[; ;setting_hardaware/setting.c: 96: }
 [e :UE 283 ]
 }

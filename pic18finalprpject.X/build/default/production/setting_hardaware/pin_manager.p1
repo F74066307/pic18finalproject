@@ -10,19 +10,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
 "1710
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1710:     struct {
-[s S66 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S66 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
 "1720
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1720:     struct {
-[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S67 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+[s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S62 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
 "1709
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1709: typedef union {
-[u S65 `S66 1 `S67 1 ]
-[n S65 . . . ]
+[u S60 `S61 1 `S62 1 ]
+[n S60 . . . ]
 "1731
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1731: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
-[v _TRISBbits `VS65 ~T0 @X0 0 e@3987 ]
+[v _TRISBbits `VS60 ~T0 @X0 0 e@3987 ]
 "1477
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 1477: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
@@ -440,28 +440,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7001
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4520.h: 7001: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 setting_hardaware/pin_manager.c
-[; ;setting_hardaware/pin_manager.c: 12: void PIN_MANAGER_Initialize(){
+"3 setting_hardaware/pin_manager.c
+[; ;setting_hardaware/pin_manager.c: 3: void PIN_MANAGER_Initialize() {
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _PIN_MANAGER_Initialize ]
 [f ]
-"13
-[; ;setting_hardaware/pin_manager.c: 13:     ADCON1 = 0x0D;
+"4
+[; ;setting_hardaware/pin_manager.c: 4:     ADCON1 = 0x0D;
 [e = _ADCON1 -> -> 13 `i `uc ]
-"16
-[; ;setting_hardaware/pin_manager.c: 16:     TRISC=0X00;
+"7
+[; ;setting_hardaware/pin_manager.c: 7:     TRISC = 0X00;
 [e = _TRISC -> -> 0 `i `uc ]
-"17
-[; ;setting_hardaware/pin_manager.c: 17:     TRISD=0X00;
+"8
+[; ;setting_hardaware/pin_manager.c: 8:     TRISD = 0X00;
 [e = _TRISD -> -> 0 `i `uc ]
-"20
-[; ;setting_hardaware/pin_manager.c: 20:     TRISBbits.RB0=0;
+"11
+[; ;setting_hardaware/pin_manager.c: 11:     TRISBbits.RB0 = 0;
 [e = . . _TRISBbits 1 0 -> -> 0 `i `uc ]
-"23
-[; ;setting_hardaware/pin_manager.c: 23:     TRISA = 0x03;
-[e = _TRISA -> -> 3 `i `uc ]
-"24
-[; ;setting_hardaware/pin_manager.c: 24: }
+"14
+[; ;setting_hardaware/pin_manager.c: 14:     TRISA = 0b00000101;
+[e = _TRISA -> -> 5 `i `uc ]
+"15
+[; ;setting_hardaware/pin_manager.c: 15: }
 [e :UE 281 ]
 }

@@ -1,5 +1,4 @@
-#ifndef _INTERRUPT_MANAGER_H
-#define _INTERRUPT_MANAGER_H
-void INTERRUPT_Initialize(void);
+#include <pic18f4520.h>
+#include <xc.h>
 
-#endif
+void INTERRUPT_Initialize(void);

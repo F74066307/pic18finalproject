@@ -1,4 +1,5 @@
 #include <pic18f4520.h>
+#include <xc.h>
 #define _XTAL_FREQ 4000000
 
 void DHT11_Start();
