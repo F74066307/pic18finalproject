@@ -85,6 +85,9 @@ void MQ_Read(double* values) {
 
 }
 
+/*
+ *init adc module and Calibrating the MQ2 sensor
+ */
 void ADC_Initialize(void) {
 
     ADCON1 = 0x0D; //AN0,AN1->analog,other->digital	

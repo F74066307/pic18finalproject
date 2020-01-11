@@ -1,7 +1,7 @@
 #include "dht.h"
 
 /*
- * check and wait dht11 sensor until free
+ * check and wait dht11 sensor until ready
  */
 void DHT11_CheckResponse() {
     while (PORTAbits.RA2 & 1); /* wait till bus is High */

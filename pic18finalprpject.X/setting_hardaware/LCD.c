@@ -40,14 +40,14 @@ void Data(int Value) {
  * send a string to lcd with certain location
  * 
  * param: const char Adr - Address of location to display string
- * param: const char *Lcd - the string to send
+ * param: const char *str - the string to send
  */
-void Send2Lcd(const char Adr, const char *Lcd) {
+void Send2Lcd(const char Adr, const char *str) {
     Cmd(Adr); // Address of location to display string
-    while (*Lcd != '\0') // Check for termination character
+    while (*str != '\0') // Check for termination character
     {
-        Data(*Lcd); // Display the character on LCD
-        Lcd++; // Increment the pointer
+        Data(*str); // Display the character on LCD
+        str++; // Increment the pointer
     }
 }
 
